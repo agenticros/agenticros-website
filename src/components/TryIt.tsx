@@ -1,6 +1,6 @@
 const examples = [
   '"Move forward 1 meter" — publishes velocity to /cmd_vel',
-  '"Follow Me" — mission to follow a person',
+  '"Follow Me" — skill to follow a person (depth + optional VLM)',
   '"Navigate to the kitchen" — sends a Nav2 goal',
   '"What do you see?" — captures a camera frame',
   '"Check the battery" — reads /battery_state',

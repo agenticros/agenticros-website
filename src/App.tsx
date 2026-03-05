@@ -6,6 +6,7 @@ import Features from './components/Features'
 import AgentTools from './components/AgentTools'
 import DeploymentModes from './components/DeploymentModes'
 import TryIt from './components/TryIt'
+import Skills from './components/Skills'
 import Packages from './components/Packages'
 import WorksWith from './components/WorksWith'
 import Footer from './components/Footer'
@@ -22,6 +23,7 @@ function App() {
         <AgentTools />
         <DeploymentModes />
         <TryIt />
+        <Skills />
         <Packages />
         <WorksWith />
         <Footer />

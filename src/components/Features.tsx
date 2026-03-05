@@ -16,8 +16,8 @@ const features = [
     description: 'Safety validator (velocity limits, workspace bounds). /estop command bypasses AI entirely for emergency stop.',
   },
   {
-    title: 'Skills',
-    description: 'Navigate-to, take-photo, check-status, pick-object, and follow-me missions. Extend with custom skills.',
+    title: 'Skills plugin architecture',
+    description: 'Optional skill packages add tools and behaviors (e.g. Follow Me). Install via skillPackages or skillPaths, configure per skill. Build and share your own skills — see the contract in the repo docs.',
   },
   {
     title: '2D & 3D vision',
@@ -26,10 +26,6 @@ const features = [
   {
     title: 'Deployment flexibility',
     description: 'Same machine, local network (WebSocket), cloud/remote (WebRTC), or Zenoh. One plugin, multiple transport modes.',
-  },
-  {
-    title: 'Missions',
-    description: 'Community powered missions (e.g. Follow Me). Explore the mission catalog and contribute your own.',
   },
 ]
 
