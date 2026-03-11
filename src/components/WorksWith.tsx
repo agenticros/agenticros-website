@@ -1,5 +1,5 @@
 const messaging = ['WhatsApp', 'Telegram', 'Discord', 'Slack']
-const agents = ['OpenClaw', 'Other AI agents']
+const agents = ['OpenClaw', 'Claude Code CLI (MCP)', 'Other AI agents']
 const robotics = ['ROS2', 'Nav2', 'MoveIt2', 'Gazebo', 'rosbridge', 'RealSense', 'zenoh-bridge-ros2dds']
 
 export default function WorksWith() {

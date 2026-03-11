@@ -1,7 +1,7 @@
 const features = [
   {
     title: 'Multiple AI agents',
-    description: 'Use OpenClaw or other supported AI agents. One ROS2 plugin, your choice of agent — switch or combine as you like.',
+    description: 'Use OpenClaw (messaging), Claude Code CLI with MCP (terminal), or other supported agents. One ROS2 core, your choice of adapter — switch or combine as you like.',
   },
   {
     title: 'Natural language from chat apps',

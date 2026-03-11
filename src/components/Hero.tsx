@@ -15,9 +15,9 @@ export default function Hero() {
         The agentic AI for robotics
       </p>
       <p className="mt-3 text-text-muted">
-        Get ready for the dawn of Physical AI. Use <strong>multiple AI agents</strong> — including{' '}
+        Get ready for the dawn of Physical AI. Use <strong>multiple AI agents</strong> —{' '}
         <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>
-        {' '}— to control ROS2 robots from any messaging app.
+        , <strong>Claude Code CLI</strong> (MCP), or any supported agent — to control ROS2 robots from chat apps or the terminal.
       </p>
       <a
         href="#quick-start"

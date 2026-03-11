@@ -16,7 +16,7 @@ export default function AgentTools() {
           ⟩ Agent Tools
         </h2>
         <p className="mt-4 text-text-secondary">
-          Any supported AI agent (including OpenClaw) has access to these ROS2 tools. Camera tools support 2D webcams and RealSense stereo depth cameras.
+          Any supported AI agent (OpenClaw, Claude Code CLI via MCP, or others) has access to these ROS2 tools. Camera tools support 2D webcams and RealSense stereo depth cameras.
         </p>
         <div className="mt-6 overflow-hidden rounded-lg border border-[var(--border-subtle)]">
           <table className="w-full border-collapse">

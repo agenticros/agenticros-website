@@ -1,6 +1,7 @@
 const packages = [
   { name: '@agenticros/rosbridge-client', desc: 'Standalone TypeScript client for the rosbridge WebSocket protocol' },
   { name: '@agenticros/agenticros', desc: 'OpenClaw plugin: ROS2 tools, commands, teleop, config UI; loads optional skills at startup' },
+  { name: '@agenticros/claude-code', desc: 'Claude Code CLI MCP server: ROS2 tools in the terminal (list topics, publish, camera, services, actions); register with claude mcp add' },
   { name: 'agenticros-skill-followme', desc: 'Follow Me skill: depth-based (and optional Ollama) person following; install via skillPackages or skillPaths' },
   { name: '@agenticros/openclaw-canvas', desc: 'Real-time robot dashboard (Phase 3)' },
   { name: 'agenticros_discovery', desc: 'ROS2 Python node for capability auto-discovery' },

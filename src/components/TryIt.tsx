@@ -15,7 +15,7 @@ export default function TryIt() {
           ⟩ Try It
         </h2>
         <p className="mt-4 text-text-secondary">
-          Send a message to your robot (via OpenClaw or any supported agent):
+          Send a message to your robot (via OpenClaw, Claude Code CLI, or any supported agent):
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           {examples.map((example) => (

@@ -25,7 +25,7 @@ export default function Footer() {
           AgenticROS — built with <a href="https://www.ros.org/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">ROS</a>
           {' + '}
           <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>
-          {' & other AI agents'}
+          {' + Claude Code CLI (MCP) & other AI agents'}
         </p>
       </div>
     </footer>
