@@ -22,12 +22,12 @@ export default function Footer() {
           <span className="text-text-muted">Apache-2.0</span>
         </div>
         <p className="flex items-center gap-2 text-sm text-text-muted">
-          AgenticROS — built with <a href="https://www.ros.org/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">ROS</a>
+          AgenticROS = <a href="https://www.ros.org/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">ROS</a>
           {' + '}
           <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>
           {' + '}
           <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>
-          {' MCP & other AI agents'}
+          {' + MCP & other AI agents'}
         </p>
       </div>
     </footer>
