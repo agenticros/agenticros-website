@@ -21,7 +21,11 @@ const features = [
   },
   {
     title: 'Skills plugin architecture',
-    description: 'Optional skill packages add tools and behaviors (e.g. Follow Me). Install via skillPackages or skillPaths, configure per skill. Build and share your own skills — see the contract in the repo docs.',
+    description: (
+      <>
+        Optional skill packages add tools and behaviors (e.g. Follow Me). <a href="https://github.com/agenticros/agenticros-skills" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Discover curated skills</a> and add your own via pull request. Install via skillPackages or skillPaths, configure per skill — see the contract in the repo docs.
+      </>
+    ),
   },
   {
     title: '2D & 3D vision',

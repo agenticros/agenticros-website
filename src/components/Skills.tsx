@@ -9,9 +9,17 @@ export default function Skills() {
           The AgenticROS plugin loads <strong>optional skill packages</strong> at startup. Each skill registers its own tools (e.g. follow_robot, follow_me_see) and reads config from <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">config.skills.&lt;skillId&gt;</code>. You install skills by adding them to <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">skillPackages</code> (npm names) or <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">skillPaths</code> (local directories) in the plugin config, then restarting the gateway.
         </p>
         <p className="mt-3 text-text-secondary">
-          The <strong>Follow Me</strong> skill (<code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">agenticros-skill-followme</code>) is the reference implementation: depth-based person following with optional Ollama/VLM, turn-to-follow and search-when-lost. Use it as a template to build and share your own skills.
+          A <a href="https://github.com/agenticros/agenticros-skills" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">curated list of AgenticROS skills</a> helps robotics developers discover available skills and add new ones via pull request. The <strong>Follow Me</strong> skill (<code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">agenticros-skill-followme</code>) is the reference implementation: depth-based person following with optional Ollama/VLM, turn-to-follow and search-when-lost. Use it as a template to build and share your own skills.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
+          <a
+            href="https://github.com/agenticros/agenticros-skills"
+            className="inline-flex items-center rounded-lg bg-cyan-bright px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-mid"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Discover skills (agenticros-skills)
+          </a>
           <a
             href="https://github.com/agenticros/agenticros/blob/main/docs/skills.md"
             className="inline-flex items-center rounded-lg border border-[var(--border-subtle)] px-4 py-2 text-sm font-medium text-text-primary transition hover:bg-bg-elevated"
@@ -23,7 +31,8 @@ export default function Skills() {
           </a>
           <a
             href="https://github.com/agenticros/agenticros-skill-followme"
-            className="inline-flex items-center rounded-lg bg-cyan-bright px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-mid"
+            className="inline-flex items-center rounded-lg border border-[var(--border-subtle)] px-4 py-2 text-sm font-medium text-text-primary transition hover:bg-bg-elevated"
+            style={{ background: 'var(--surface-card)' }}
             target="_blank"
             rel="noopener noreferrer"
           >

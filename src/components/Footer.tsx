@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--border-subtle)] px-6 py-12">
-      <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-6 sm:flex-row">
+      <div className="mx-auto flex max-w-4xl flex-col items-center gap-8">
         <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-text-secondary">
           <a href="https://github.com/agenticros/agenticros" className="text-text-secondary transition hover:text-text-primary" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -19,9 +19,12 @@ export default function Footer() {
           <a href="https://github.com/agenticros/agenticros/blob/main/docs/skills.md" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
             Skills guide
           </a>
+          <a href="https://github.com/agenticros/agenticros-skills" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
+            Curated skills
+          </a>
           <span className="text-text-muted">Apache-2.0</span>
         </div>
-        <p className="flex items-center gap-2 text-sm text-text-muted">
+        <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-sm text-text-muted">
           AgenticROS = <a href="https://www.ros.org/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">ROS</a>
           {' + '}
           <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>
