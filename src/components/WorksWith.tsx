@@ -2,6 +2,7 @@ const messaging = ['WhatsApp', 'Telegram', 'Discord', 'Slack']
 const agents = [
   { name: 'OpenClaw', href: 'https://openclaw.ai/' },
   { name: 'Claude Code CLI (MCP)', href: 'https://claude.com/product/claude-code' },
+  { name: 'MCP', href: 'https://modelcontextprotocol.io/docs/getting-started/intro' },
   { name: 'Other AI agents' },
 ]
 const robotics = ['ROS2', 'Nav2', 'MoveIt2', 'Gazebo', 'rosbridge', 'RealSense', 'zenoh-bridge-ros2dds']

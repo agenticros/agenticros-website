@@ -27,7 +27,9 @@ export default function Footer() {
           <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>
           {' + '}
           <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>
-          {' + MCP & other AI agents'}
+          {' + '}
+          <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>
+          {' & other AI agents'}
         </p>
       </div>
     </footer>

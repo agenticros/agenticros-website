@@ -16,7 +16,7 @@ export default function AgentTools() {
           ⟩ Agent Tools
         </h2>
         <p className="mt-4 text-text-secondary">
-          Any supported AI agent (<a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> CLI via MCP, or others) has access to these ROS2 tools. Camera tools support 2D webcams and RealSense stereo depth cameras.
+          Any supported AI agent (<a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> CLI via <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>, or others) has access to these ROS2 tools. Camera tools support 2D webcams and RealSense stereo depth cameras.
         </p>
         <div className="mt-6 overflow-hidden rounded-lg border border-[var(--border-subtle)]">
           <table className="w-full border-collapse">
