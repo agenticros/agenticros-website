@@ -1,7 +1,11 @@
 const features = [
   {
     title: 'Multiple AI agents',
-    description: 'Use OpenClaw (messaging), Claude Code CLI with MCP (terminal), or other supported agents. One ROS2 core, your choice of adapter — switch or combine as you like.',
+    description: (
+      <>
+        Use <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a> (messaging), <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> CLI with MCP (terminal), or other supported agents. One ROS2 core, your choice of adapter — switch or combine as you like.
+      </>
+    ),
   },
   {
     title: 'Natural language from chat apps',

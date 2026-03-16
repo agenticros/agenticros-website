@@ -1,5 +1,9 @@
 const messaging = ['WhatsApp', 'Telegram', 'Discord', 'Slack']
-const agents = ['OpenClaw', 'Claude Code CLI (MCP)', 'Other AI agents']
+const agents = [
+  { name: 'OpenClaw', href: 'https://openclaw.ai/' },
+  { name: 'Claude Code CLI (MCP)', href: 'https://claude.com/product/claude-code' },
+  { name: 'Other AI agents' },
+]
 const robotics = ['ROS2', 'Nav2', 'MoveIt2', 'Gazebo', 'rosbridge', 'RealSense', 'zenoh-bridge-ros2dds']
 
 export default function WorksWith() {
@@ -27,15 +31,28 @@ export default function WorksWith() {
           <div>
             <h3 className="text-sm font-medium uppercase tracking-wider text-text-muted">AI agents</h3>
             <div className="mt-3 flex flex-wrap gap-3">
-              {agents.map((name) => (
-                <span
-                  key={name}
-                  className="rounded-lg border border-[var(--border-subtle)] px-4 py-2 text-text-primary"
-                  style={{ background: 'var(--surface-card)' }}
-                >
-                  {name}
-                </span>
-              ))}
+              {agents.map((agent) =>
+                agent.href ? (
+                  <a
+                    key={agent.name}
+                    href={agent.href}
+                    className="rounded-lg border border-[var(--border-subtle)] px-4 py-2 text-cyan-bright transition hover:underline"
+                    style={{ background: 'var(--surface-card)' }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {agent.name}
+                  </a>
+                ) : (
+                  <span
+                    key={agent.name}
+                    className="rounded-lg border border-[var(--border-subtle)] px-4 py-2 text-text-primary"
+                    style={{ background: 'var(--surface-card)' }}
+                  >
+                    {agent.name}
+                  </span>
+                )
+              )}
             </div>
           </div>
           <div>

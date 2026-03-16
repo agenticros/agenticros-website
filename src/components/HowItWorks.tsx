@@ -1,7 +1,7 @@
 export default function HowItWorks() {
   const steps = [
     'User (messaging app or terminal)',
-    'Your AI agent (OpenClaw, Claude Code CLI via MCP, or another supported agent)',
+    <>Your AI agent (<a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> CLI via MCP, or another supported agent)</>,
     'AgenticROS plugin (ROS2 tools + safety)',
     'rosbridge_server (WebSocket)',
     'ROS2 DDS → Robots: Nav2, MoveIt2, 2D webcams, RealSense depth, sensors',
@@ -15,7 +15,7 @@ export default function HowItWorks() {
           ⟩ How It Works
         </h2>
         <p className="mt-4 text-text-secondary">
-          AgenticROS works with <strong>multiple AI agents</strong>: OpenClaw (messaging apps), Claude Code CLI (terminal via MCP), and others. A user sends a natural language message — from chat or the terminal. Your chosen agent uses ROS2 tools registered by the AgenticROS adapter (plugin or MCP server). The agent translates intent into ROS2 operations (topic publish, service call, action goal). The robot acts, and the agent streams feedback back.
+          AgenticROS works with <strong>multiple AI agents</strong>: <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a> (messaging apps), <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> CLI (terminal via MCP), and others. A user sends a natural language message — from chat or the terminal. Your chosen agent uses ROS2 tools registered by the AgenticROS adapter (plugin or MCP server). The agent translates intent into ROS2 operations (topic publish, service call, action goal). The robot acts, and the agent streams feedback back.
         </p>
         <div className="mt-8 flex flex-col gap-3">
           {steps.map((step, i) => (

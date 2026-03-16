@@ -31,8 +31,8 @@ docker compose up`}</code>
           <div>
             <h3 className="text-lg font-medium text-text-primary">3. Connect your AI agent</h3>
             <p className="mt-2 text-text-secondary">
-              <strong>OpenClaw</strong>: <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-coral-bright">openclaw plugins install -l ./extensions/openclaw-plugin</code>.{' '}
-              <strong>Claude Code CLI</strong>: register the MCP server with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-coral-bright">claude mcp add</code> (see <a href="https://github.com/agenticros/agenticros/blob/main/packages/agenticros-claude-code/README.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code adapter README</a>). Other agents: see the repo docs for your platform.
+              <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>: <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-coral-bright">openclaw plugins install -l ./extensions/openclaw-plugin</code>.{' '}
+              <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> CLI: register the MCP server with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-coral-bright">claude mcp add</code> (see <a href="https://github.com/agenticros/agenticros/blob/main/packages/agenticros-claude-code/README.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code adapter README</a>). Other agents: see the repo docs for your platform.
             </p>
           </div>
 
