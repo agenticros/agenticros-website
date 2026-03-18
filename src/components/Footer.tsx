@@ -29,10 +29,16 @@ export default function Footer() {
           {' + '}
           <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>
           {' + '}
+          <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>
+          {' + '}
           <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>
           {' + '}
           <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>
           {' & other AI agents'}
+        </p>
+        <p className="text-center text-sm text-text-muted">
+          AgenticROS is supported by{' '}
+          <a href="https://realsenseai.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">RealSense</a>.
         </p>
       </div>
     </footer>

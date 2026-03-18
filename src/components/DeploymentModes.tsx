@@ -10,7 +10,7 @@ const modes = [
     name: 'Local Network',
     summary: (
       <>
-        Your AI agent (e.g. <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a> or <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> CLI) on a separate machine (laptop, server). Adapter connects to rosbridge_server on the robot via WebSocket over LAN.
+        Your AI agent (e.g. <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, or <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> CLI) on a separate machine (laptop, server). Adapter connects to rosbridge_server on the robot via WebSocket over LAN.
       </>
     ),
     bestFor: 'Development, testing, multi-robot labs.',
@@ -37,7 +37,7 @@ export default function DeploymentModes() {
           ⟩ Deployment Modes
         </h2>
         <p className="mt-4 text-text-secondary">
-          AgenticROS supports four deployment modes depending on where your AI agent (<a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> CLI, or another) runs relative to the robot.
+          AgenticROS supports four deployment modes depending on where your AI agent (<a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> CLI, or another) runs relative to the robot.
         </p>
         <div className="mt-8 space-y-6">
           {modes.map(({ id, name, summary, bestFor }) => (

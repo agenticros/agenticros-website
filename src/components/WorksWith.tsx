@@ -1,6 +1,7 @@
 const messaging = ['WhatsApp', 'Telegram', 'Discord', 'Slack']
 const agents = [
   { name: 'OpenClaw', href: 'https://openclaw.ai/' },
+  { name: 'NemoClaw', href: 'https://www.nvidia.com/en-us/ai/nemoclaw' },
   { name: 'Claude Code CLI (MCP)', href: 'https://claude.com/product/claude-code' },
   { name: 'MCP', href: 'https://modelcontextprotocol.io/docs/getting-started/intro' },
   { name: 'Other AI agents' },
