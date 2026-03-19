@@ -35,6 +35,11 @@ export default function Hero() {
           alt="Google Gemini"
           className="h-[250px] w-[250px] object-contain"
         />
+        <img
+          src="/ros.webp"
+          alt="ROS"
+          className="h-[250px] w-[250px] object-contain"
+        />
       </div>
       <a
         href="#quick-start"
