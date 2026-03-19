@@ -56,6 +56,13 @@ export default function Features() {
             </div>
           ))}
         </div>
+        <div className="mt-14 flex justify-center">
+          <img
+            src="/realsense-openclaw.png"
+            alt="RealSense and OpenClaw"
+            className="h-[250px] w-[250px] object-contain"
+          />
+        </div>
       </div>
     </section>
   )
