@@ -19,6 +19,23 @@ export default function Hero() {
         <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>
         , <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>, <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a>, <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>, etc) to control ROS2 robots!
       </p>
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
+        <img
+          src="/openclaw.png"
+          alt="OpenClaw"
+          className="h-[250px] w-[250px] object-contain"
+        />
+        <img
+          src="/claudecode.png"
+          alt="Claude Code"
+          className="h-[250px] w-[250px] object-contain"
+        />
+        <img
+          src="/gemini.png"
+          alt="Google Gemini"
+          className="h-[250px] w-[250px] object-contain"
+        />
+      </div>
       <a
         href="#quick-start"
         className="mt-10 inline-flex items-center rounded-lg bg-cyan-bright px-6 py-3 font-medium text-white transition hover:bg-cyan-mid"
