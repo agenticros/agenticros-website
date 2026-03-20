@@ -21,7 +21,7 @@ pnpm build`}</code>
           </div>
 
           <div>
-            <h3 className="text-lg font-medium text-text-primary">2. Run the demo stack (ROS2 + rosbridge + Gazebo)</h3>
+            <h3 className="text-lg font-medium text-text-primary">2. Run the demo stack (ROS2 + rosbridge + Gazebo) unless you already have a ROS2 environment</h3>
             <pre className="mt-2 overflow-x-auto rounded-lg bg-bg-elevated p-4 font-mono text-sm text-text-primary" style={{ background: 'var(--surface-inset-highlight)' }}>
               <code>{`cd docker
 docker compose up`}</code>
@@ -29,14 +29,27 @@ docker compose up`}</code>
           </div>
 
           <div>
-            <h3 className="text-lg font-medium text-text-primary">3. Connect your AI agent</h3>
-            <p className="mt-2 text-text-secondary">
-              <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>: <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-coral-bright">openclaw plugins install -l ./extensions/openclaw-plugin</code>.{' '}
-              <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>: same plugin in a sandbox — see the main repo for setup.{' '}
-              <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a>: configure your Gemini agent to call the same AgenticROS tools.{' '}
-              <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> CLI: register the <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a> server with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-coral-bright">claude mcp add</code>.{' '}
-              <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude desktop</a> &amp; <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a> (iOS, paired to your Mac): add the same MCP server to <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-coral-bright">~/Library/Application Support/Claude/claude_desktop_config.json</code> (absolute path to <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-coral-bright">dist/index.js</code>), then fully quit and restart Claude. Details: <a href="https://github.com/agenticros/agenticros/blob/main/packages/agenticros-claude-code/README.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude adapter README</a>. Other agents: see the repo docs for your platform.
-            </p>
+            <h3 className="text-lg font-medium text-text-primary">3. Connect your AI agent to ROS</h3>
+            <ul className="mt-2 list-disc space-y-2 pl-6 text-text-secondary">
+              <li>
+                <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>: <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-coral-bright">openclaw plugins install -l ./extensions/openclaw-plugin</code>.
+              </li>
+              <li>
+                <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>: same plugin in a sandbox — see the main repo for setup.
+              </li>
+              <li>
+                <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a>: configure your Gemini agent to call the same AgenticROS tools.
+              </li>
+              <li>
+                <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> CLI: register the <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a> server with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-coral-bright">claude mcp add</code>.
+              </li>
+              <li>
+                <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Desktop</a> &amp; <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a> (iOS/Android, paired to your machine): add the same MCP server to <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-coral-bright">~/Library/Application Support/Claude/claude_desktop_config.json</code> (absolute path to <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-coral-bright">dist/index.js</code>), then fully quit and restart Claude. Details: <a href="https://github.com/agenticros/agenticros/blob/main/packages/agenticros-claude-code/README.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude adapter README</a>.
+              </li>
+              <li>
+                Other agents: see the repo docs for your platform.
+              </li>
+            </ul>
           </div>
 
           <div>

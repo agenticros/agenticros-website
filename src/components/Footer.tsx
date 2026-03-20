@@ -45,8 +45,14 @@ export default function Footer() {
         <p className="text-center text-sm text-text-muted">
           AgenticROS is supported by{' '}
           <a href="https://realsenseai.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">RealSense</a>.
+          <img
+            src="/realsense-openclaw.png"
+            alt="RealSense and OpenClaw"
+            className="h-[250px] w-[250px] object-contain"
+          />
         </p>
       </div>
+  
     </footer>
   )
 }
