@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
+import HeroVideo from './components/HeroVideo'
 import HowItWorks from './components/HowItWorks'
 import QuickStart from './components/QuickStart'
 import Features from './components/Features'
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <HeroVideo />
         <HowItWorks />
         <QuickStart />
         <Features />
