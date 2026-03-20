@@ -1,6 +1,6 @@
 # AgenticROS Website
 
-Marketing site for **AgenticROS** — natural language control of ROS2 robots through messaging apps, with support for **multiple AI agents** including [OpenClaw](https://openclaw.ai/). Styled to match the OpenClaw look and feel.
+Marketing site for **AgenticROS** — natural language control of ROS2 robots through messaging apps, with support for **multiple AI agents** including [OpenClaw](https://openclaw.ai/), [Claude Code](https://claude.com/product/claude-code), [Claude desktop & Dispatch](https://claude.com/download), [Google Gemini](https://ai.google.dev/gemini-api/docs), and [MCP](https://modelcontextprotocol.io/docs/getting-started/intro). Styled to match the OpenClaw look and feel.
 
 ## Run
 

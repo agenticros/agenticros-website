@@ -3,6 +3,7 @@ const agents = [
   { name: 'OpenClaw', href: 'https://openclaw.ai/' },
   { name: 'NemoClaw', href: 'https://www.nvidia.com/en-us/ai/nemoclaw' },
   { name: 'Claude Code', href: 'https://claude.com/product/claude-code' },
+  { name: 'Claude desktop + Dispatch', href: 'https://claude.com/download' },
   { name: 'Google Gemini', href: 'https://ai.google.dev/gemini-api/docs' },
   { name: 'MCP', href: 'https://modelcontextprotocol.io/docs/getting-started/intro' },
   { name: 'Other AI agents' },
