@@ -1,4 +1,4 @@
-const tools = [
+const ros2Tools = [
   { name: 'ros2_publish', description: 'Publish messages to any ROS2 topic' },
   { name: 'ros2_subscribe_once', description: 'Read the latest message from a topic' },
   { name: 'ros2_service_call', description: 'Call a ROS2 service' },
@@ -6,6 +6,15 @@ const tools = [
   { name: 'ros2_param_get/set', description: 'Get/set ROS2 node parameters' },
   { name: 'ros2_list_topics', description: 'Discover available topics' },
   { name: 'ros2_camera_snapshot', description: 'Capture a camera frame' },
+  { name: 'ros2_depth_distance', description: 'Sample depth at the center of a depth image (RealSense and similar)' },
+  { name: 'ros2_find_object', description: 'Rotate the robot in place and stop when YOLOv8 detects a target object — returns the bounding box, confidence, and horizontal offset from image center' },
+]
+
+const memoryTools = [
+  { name: 'memory_remember', description: 'Store a fact (content, tags, namespace) in cross-adapter long-term memory' },
+  { name: 'memory_recall', description: 'Search memories by free-text query — returns ranked matches across adapters' },
+  { name: 'memory_forget', description: 'Delete a memory by id, query, or namespace' },
+  { name: 'memory_status', description: 'Health check: enabled, backend, namespace, record count, last write timestamp' },
 ]
 
 export default function AgentTools() {
@@ -27,7 +36,30 @@ export default function AgentTools() {
               </tr>
             </thead>
             <tbody>
-              {tools.map(({ name, description }) => (
+              {ros2Tools.map(({ name, description }) => (
+                <tr key={name} className="border-b border-[var(--border-subtle)] last:border-0">
+                  <td className="px-4 py-3 font-mono text-sm text-coral-bright">{name}</td>
+                  <td className="px-4 py-3 text-sm text-text-secondary">{description}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="mt-10 font-display text-lg font-medium text-text-primary">Memory tools (optional)</h3>
+        <p className="mt-2 text-text-secondary">
+          When the <a href="#memory" className="text-cyan-bright hover:underline">AI agent memory service</a> is enabled, every adapter — OpenClaw, Claude Code, Claude Desktop / Dispatch, and Gemini — exposes the same four tools backed by a <strong>shared, file-backed store</strong>. A fact remembered from one adapter is immediately recallable from any other on the same host.
+        </p>
+        <div className="mt-4 overflow-hidden rounded-lg border border-[var(--border-subtle)]">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr style={{ background: 'var(--bg-elevated)' }}>
+                <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">Tool</th>
+                <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {memoryTools.map(({ name, description }) => (
                 <tr key={name} className="border-b border-[var(--border-subtle)] last:border-0">
                   <td className="px-4 py-3 font-mono text-sm text-coral-bright">{name}</td>
                   <td className="px-4 py-3 text-sm text-text-secondary">{description}</td>

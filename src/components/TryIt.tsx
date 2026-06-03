@@ -1,8 +1,11 @@
 const examples = [
   '"Move forward 1 meter" — publishes velocity to /cmd_vel',
+  '"Find the bottle" — Find Object skill: rotates until YOLOv8 spots it',
   '"Follow Me" — skill to follow a person (depth + optional VLM)',
   '"Navigate to the kitchen" — sends a Nav2 goal',
   '"What do you see?" — captures a camera frame',
+  '"Remember the rug in the hallway is fragile" — stores a cross-adapter memory',
+  '"What do I have for eyes?" — recalls from memory (no ROS call needed)',
   '"Check the battery" — reads /battery_state',
   '/estop — emergency stop (bypasses AI)',
 ]

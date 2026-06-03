@@ -22,6 +22,9 @@ export default function Footer() {
           <a href="https://github.com/agenticros/agenticros-skills" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
             Curated skills
           </a>
+          <a href="https://github.com/agenticros/agenticros/blob/main/docs/memory.md" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
+            Memory
+          </a>
           <span className="text-text-muted">Apache-2.0</span>
         </div>
         <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-sm text-text-muted">
