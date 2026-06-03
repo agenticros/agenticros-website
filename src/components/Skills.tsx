@@ -67,6 +67,55 @@ export default function Skills() {
           ))}
         </div>
 
+        <h3 className="mt-10 font-display text-lg font-medium text-text-primary">Enable it</h3>
+        <p className="mt-2 text-text-secondary">
+          Each skill is opt-in. Enable one by adding it to the AgenticROS plugin config under <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>'s <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">plugins.entries.agenticros.config</code> (e.g. <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">~/.openclaw/openclaw.json</code>, or via the config UI at <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">/agenticros/config</code>) — by <strong>npm package name</strong> or by <strong>local directory</strong>:
+        </p>
+
+        <ol className="mt-4 list-decimal space-y-4 pl-6 text-text-secondary">
+          <li>
+            <strong className="text-text-primary">Reference the skill.</strong> Either add it to <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">skillPackages</code> (after <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">pnpm add</code> in the gateway), or point <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">skillPaths</code> at a built skill directory. Then set its options under <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">config.skills.&lt;skillId&gt;</code>:
+            <pre
+              className="mt-3 overflow-x-auto rounded-lg bg-bg-elevated p-4 font-mono text-sm text-text-primary"
+              style={{ background: 'var(--surface-inset-highlight)' }}
+            >
+              <code>{`{
+  "skillPackages": ["agenticros-skill-find"],
+  "skills": {
+    "find": {
+      "defaultAngularSpeed": 0.3,
+      "defaultTimeoutSeconds": 30,
+      "defaultMinConfidence": 0.5
+    }
+  }
+}`}</code>
+            </pre>
+          </li>
+          <li>
+            <strong className="text-text-primary">Sync the tool allowlist.</strong> OpenClaw 2026+ enforces <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">contracts.tools</code> in <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">openclaw.plugin.json</code> as a strict allowlist. From the AgenticROS repo root, register the new skill's tools:
+            <pre
+              className="mt-3 overflow-x-auto rounded-lg bg-bg-elevated p-4 font-mono text-sm text-text-primary"
+              style={{ background: 'var(--surface-inset-highlight)' }}
+            >
+              <code>{`pnpm sync-skill-tools`}</code>
+            </pre>
+          </li>
+          <li>
+            <strong className="text-text-primary">Refresh and restart the gateway.</strong>
+            <pre
+              className="mt-3 overflow-x-auto rounded-lg bg-bg-elevated p-4 font-mono text-sm text-text-primary"
+              style={{ background: 'var(--surface-inset-highlight)' }}
+            >
+              <code>{`openclaw plugins registry --refresh`}</code>
+            </pre>
+            Look for <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">AgenticROS: loaded skills: find</code> in the gateway log and no <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">plugin must declare contracts.tools for: …</code> errors. Tools like <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">find_object</code> (or <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">follow_robot</code> for Follow Me) now show up to every connected agent.
+          </li>
+        </ol>
+
+        <p className="mt-4 text-sm text-text-muted">
+          The <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> MCP adapter exposes the Find Object skill as the built-in <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">ros2_find_object</code> tool — no skill install required on that adapter. The OpenClaw "Enable it" steps above are for adding skills to the gateway alongside the rest of your tools.
+        </p>
+
         <div className="mt-8 flex flex-wrap gap-3">
           <a
             href="https://github.com/agenticros/agenticros-skills"
