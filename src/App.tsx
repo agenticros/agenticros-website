@@ -6,6 +6,7 @@ import QuickStart from './components/QuickStart'
 import Features from './components/Features'
 import AgentTools from './components/AgentTools'
 import DeploymentModes from './components/DeploymentModes'
+import Simulation from './components/Simulation'
 import TryIt from './components/TryIt'
 import Skills from './components/Skills'
 import Memory from './components/Memory'
@@ -25,6 +26,7 @@ function App() {
         <Features />
         <AgentTools />
         <DeploymentModes />
+        <Simulation />
         <TryIt />
         <Skills />
         <Memory />

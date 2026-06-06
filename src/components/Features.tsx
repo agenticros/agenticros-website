@@ -1,9 +1,25 @@
 const features = [
   {
+    title: 'One-command install',
+    description: (
+      <>
+        <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-xs text-coral-bright">npx agenticros</code> on any machine with Node &ge; 20. Interactive menu walks you through workspace + plugin + API key, then launches a real robot or a simulator. No <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-xs">git clone</code>, no dependency hunting, idempotent reruns.
+      </>
+    ),
+  },
+  {
     title: 'Multiple AI agents',
     description: (
       <>
         Use <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> (terminal <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>), <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Desktop</a> &amp; <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a> (iOS, paired to Mac — same MCP server), <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a>, or other supported agents. One ROS2 core, your choice of adapter — switch or combine as you like.
+      </>
+    ),
+  },
+  {
+    title: 'Real robots & simulation',
+    description: (
+      <>
+        Drive a real ROS 2 robot, or boot a built-in <strong>Gazebo</strong> simulator &mdash; a 2-wheel <strong>AMR</strong> (RGBD + lidar + IMU) or a 6-DOF <strong>arm</strong> manipulator. Topic names match the real-robot plugin so the same skill code, MCP calls, and chat commands work in both. <a href="#simulation" className="text-cyan-bright hover:underline">Learn more →</a>
       </>
     ),
   },

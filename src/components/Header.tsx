@@ -5,6 +5,7 @@ export default function Header() {
     { href: '#features', label: 'Features' },
     { href: '#agent-tools', label: 'Agent Tools' },
     { href: '#deployment', label: 'Deployment' },
+    { href: '#simulation', label: 'Simulation' },
     { href: '#try-it', label: 'Try It' },
     { href: '#skills', label: 'Skills' },
     { href: '#memory', label: 'Memory' },
