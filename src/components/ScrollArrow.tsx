@@ -1,13 +1,16 @@
 type Props = {
   nextId: string
   label?: string
+  direction?: 'down' | 'up'
 }
 
-export default function ScrollArrow({ nextId, label }: Props) {
+export default function ScrollArrow({ nextId, label, direction = 'down' }: Props) {
+  const points = direction === 'up' ? '6 15 12 9 18 15' : '6 9 12 15 18 9'
+  const defaultLabel = direction === 'up' ? 'Scroll back to top' : 'Scroll to next section'
   return (
     <a
       href={`#${nextId}`}
-      aria-label={label ?? `Scroll to next section`}
+      aria-label={label ?? defaultLabel}
       className="absolute bottom-6 right-6 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border-subtle)] bg-bg-elevated/70 text-text-secondary backdrop-blur-md transition hover:border-coral-bright hover:text-coral-bright focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-bright"
     >
       <svg
@@ -20,7 +23,7 @@ export default function ScrollArrow({ nextId, label }: Props) {
         strokeLinejoin="round"
         aria-hidden
       >
-        <polyline points="6 9 12 15 18 9" />
+        <polyline points={points} />
       </svg>
     </a>
   )

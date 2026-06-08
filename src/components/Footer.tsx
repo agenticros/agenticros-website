@@ -1,6 +1,8 @@
+import ScrollArrow from './ScrollArrow'
+
 export default function Footer() {
   return (
-    <footer id="site-footer" className="scroll-mt-20 border-t border-[var(--border-subtle)] px-6 py-12">
+    <footer id="site-footer" className="relative scroll-mt-20 border-t border-[var(--border-subtle)] px-6 py-12">
       <div className="mx-auto flex max-w-4xl flex-col items-center gap-8">
         <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-text-secondary">
           <a href="https://github.com/agenticros/agenticros" className="text-text-secondary transition hover:text-text-primary" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -55,7 +57,7 @@ export default function Footer() {
           />
         </p>
       </div>
-  
+      <ScrollArrow nextId="hero" direction="up" label="Back to top" />
     </footer>
   )
 }
