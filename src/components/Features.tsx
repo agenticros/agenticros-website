@@ -1,3 +1,5 @@
+import ScrollArrow from './ScrollArrow'
+
 const features = [
   {
     title: 'One-command install',
@@ -39,7 +41,7 @@ const features = [
     title: 'Skills plugin architecture',
     description: (
       <>
-        Optional skill packages add tools and behaviors (e.g. <a href="https://github.com/agenticros/agenticros-skill-find" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Find Object</a>, <a href="https://github.com/agenticros/agenticros-skill-followme" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Follow Me</a>). <a href="https://github.com/agenticros/agenticros-skills" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Discover curated skills</a> and add your own via pull request. Install via skillPackages or skillPaths, configure per skill — see the contract in the repo docs.
+        Optional skill packages add tools and behaviors (e.g. <a href="https://github.com/agenticros/agenticros-skill-find" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Find Object</a>, <a href="https://github.com/agenticros/agenticros-skill-followme" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Follow Me</a>). <a href="https://github.com/agenticros/agenticros-skills" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Discover curated skills</a> and add your own via pull request.
       </>
     ),
   },
@@ -47,7 +49,7 @@ const features = [
     title: 'Cross-adapter memory',
     description: (
       <>
-        Optional, off-by-default semantic memory service. When enabled, OpenClaw, Claude Code / Desktop / Dispatch, and Gemini all share a single file-backed store (local JSON or <a href="https://github.com/mem0ai/mem0" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">mem0</a>). Remember a fact from one agent, recall it from any other talking to the same robot — across processes, sessions, and restarts.
+        Optional, off-by-default semantic memory service. When enabled, OpenClaw, Claude Code / Desktop / Dispatch, and Gemini all share a single file-backed store (local JSON or <a href="https://github.com/mem0ai/mem0" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">mem0</a>). Remember a fact from one agent, recall it from any other.
       </>
     ),
   },
@@ -63,16 +65,19 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="scroll-mt-20 border-t border-[var(--border-subtle)] px-6 py-16">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="features"
+      className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
+    >
+      <div className="mx-auto w-full max-w-6xl">
         <h2 className="font-display text-2xl font-semibold text-text-primary">
           ⟩ What It Does
         </h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map(({ title, description }) => (
             <div
               key={title}
-              className="rounded-xl border border-[var(--border-subtle)] p-6"
+              className="rounded-xl border border-[var(--border-subtle)] p-5"
               style={{ background: 'var(--surface-card)' }}
             >
               <h3 className="font-display font-medium text-text-primary">{title}</h3>
@@ -80,8 +85,8 @@ export default function Features() {
             </div>
           ))}
         </div>
-
       </div>
+      <ScrollArrow nextId="agent-tools" label="Continue to Agent Tools" />
     </section>
   )
 }

@@ -1,3 +1,5 @@
+import ScrollArrow from './ScrollArrow'
+
 const packages = [
   { name: 'agenticros', desc: <>The unified <strong>CLI</strong>. <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">npx agenticros</code> on any Node &ge; 20 host: interactive menu, real-robot launcher, simulator launcher, doctor, log tail, config editor. Bundles a snapshot of the workspace so it works without a checkout.</> },
   { name: '@agenticros/rosbridge-client', desc: 'Standalone TypeScript client for the rosbridge WebSocket protocol' },
@@ -14,24 +16,28 @@ const packages = [
 
 export default function Packages() {
   return (
-    <section id="packages" className="scroll-mt-20 border-t border-[var(--border-subtle)] px-6 py-16">
-      <div className="mx-auto max-w-4xl">
+    <section
+      id="packages"
+      className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
+    >
+      <div className="mx-auto w-full max-w-4xl">
         <h2 className="font-display text-2xl font-semibold text-text-primary">
           ⟩ Packages
         </h2>
-        <div className="mt-6 space-y-4">
+        <div className="mt-6 space-y-3">
           {packages.map(({ name, desc }) => (
             <div
               key={name}
-              className="flex flex-col gap-1 rounded-lg border border-[var(--border-subtle)] p-4 sm:flex-row sm:items-center sm:justify-between"
+              className="flex flex-col gap-1 rounded-lg border border-[var(--border-subtle)] p-3 sm:flex-row sm:items-center sm:justify-between"
               style={{ background: 'var(--surface-card)' }}
             >
               <code className="font-mono text-sm text-coral-bright">{name}</code>
-              <span className="text-sm text-text-secondary">{desc}</span>
+              <span className="text-sm text-text-secondary sm:ml-4 sm:text-right">{desc}</span>
             </div>
           ))}
         </div>
       </div>
+      <ScrollArrow nextId="works-with" label="Continue to Works With" />
     </section>
   )
 }

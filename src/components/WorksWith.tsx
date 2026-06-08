@@ -1,3 +1,5 @@
+import ScrollArrow from './ScrollArrow'
+
 const messaging = ['WhatsApp', 'Telegram', 'Discord', 'Slack', 'SMS']
 const agents = [
   { name: 'OpenClaw', href: 'https://openclaw.ai/' },
@@ -12,8 +14,11 @@ const robotics = ['ROS2', 'Nav2', 'MoveIt2', 'Gazebo', 'rosbridge', 'RealSense',
 
 export default function WorksWith() {
   return (
-    <section className="border-t border-[var(--border-subtle)] px-6 py-16">
-      <div className="mx-auto max-w-4xl">
+    <section
+      id="works-with"
+      className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
+    >
+      <div className="mx-auto w-full max-w-4xl">
         <h2 className="font-display text-2xl font-semibold text-text-primary">
           ⟩ Works With
         </h2>
@@ -75,6 +80,7 @@ export default function WorksWith() {
           </div>
         </div>
       </div>
+      <ScrollArrow nextId="site-footer" label="Go to footer" />
     </section>
   )
 }

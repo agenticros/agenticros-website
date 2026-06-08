@@ -1,3 +1,5 @@
+import ScrollArrow from './ScrollArrow'
+
 export default function HowItWorks() {
   const steps = [
     'User (messaging app or terminal)',
@@ -9,8 +11,11 @@ export default function HowItWorks() {
   ]
 
   return (
-    <section id="how-it-works" className="scroll-mt-20 border-t border-[var(--border-subtle)] px-6 py-16">
-      <div className="mx-auto max-w-4xl">
+    <section
+      id="how-it-works"
+      className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
+    >
+      <div className="mx-auto w-full max-w-4xl">
         <h2 className="font-display text-2xl font-semibold text-text-primary">
           ⟩ How It Works
         </h2>
@@ -31,6 +36,7 @@ export default function HowItWorks() {
           Supported hardware includes 2D webcams and 3D RealSense stereo depth cameras.
         </p>
       </div>
+      <ScrollArrow nextId="quick-start" label="Continue to Quick Start" />
     </section>
   )
 }

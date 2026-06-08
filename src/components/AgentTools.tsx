@@ -1,3 +1,5 @@
+import ScrollArrow from './ScrollArrow'
+
 const ros2Tools = [
   { name: 'ros2_publish', description: 'Publish messages to any ROS2 topic' },
   { name: 'ros2_subscribe_once', description: 'Read the latest message from a topic' },
@@ -19,56 +21,74 @@ const memoryTools = [
 
 export default function AgentTools() {
   return (
-    <section id="agent-tools" className="scroll-mt-20 border-t border-[var(--border-subtle)] px-6 py-16">
-      <div className="mx-auto max-w-4xl">
-        <h2 className="font-display text-2xl font-semibold text-text-primary">
-          ⟩ Agent Tools
-        </h2>
-        <p className="mt-4 text-text-secondary">
-          Any supported AI agent (<a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>, <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Desktop</a> / <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a>, <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a> via <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>, or others) has access to these ROS2 tools. Camera tools support 2D webcams and RealSense stereo depth cameras.
-        </p>
-        <div className="mt-6 overflow-hidden rounded-lg border border-[var(--border-subtle)]">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr style={{ background: 'var(--bg-elevated)' }}>
-                <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">Tool</th>
-                <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {ros2Tools.map(({ name, description }) => (
-                <tr key={name} className="border-b border-[var(--border-subtle)] last:border-0">
-                  <td className="px-4 py-3 font-mono text-sm text-coral-bright">{name}</td>
-                  <td className="px-4 py-3 text-sm text-text-secondary">{description}</td>
+    <>
+      {/* Panel 1: ROS2 Tools */}
+      <section
+        id="agent-tools"
+        className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
+      >
+        <div className="mx-auto w-full max-w-4xl">
+          <h2 className="font-display text-2xl font-semibold text-text-primary">
+            ⟩ Agent Tools &mdash; ROS2
+          </h2>
+          <p className="mt-4 text-text-secondary">
+            Any supported AI agent (<a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>, <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Desktop</a> / <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a>, <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a> via <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>, or others) has access to these ROS2 tools. Camera tools support 2D webcams and RealSense stereo depth cameras.
+          </p>
+          <div className="mt-6 overflow-hidden rounded-lg border border-[var(--border-subtle)]">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr style={{ background: 'var(--bg-elevated)' }}>
+                  <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">Tool</th>
+                  <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">Description</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {ros2Tools.map(({ name, description }) => (
+                  <tr key={name} className="border-b border-[var(--border-subtle)] last:border-0">
+                    <td className="px-4 py-3 font-mono text-sm text-coral-bright">{name}</td>
+                    <td className="px-4 py-3 text-sm text-text-secondary">{description}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
+        <ScrollArrow nextId="agent-tools-memory" label="See memory tools" />
+      </section>
 
-        <h3 className="mt-10 font-display text-lg font-medium text-text-primary">Memory tools (optional)</h3>
-        <p className="mt-2 text-text-secondary">
-          When the <a href="#memory" className="text-cyan-bright hover:underline">AI agent memory service</a> is enabled, every adapter — OpenClaw, Claude Code, Claude Desktop / Dispatch, and Gemini — exposes the same four tools backed by a <strong>shared, file-backed store</strong>. A fact remembered from one adapter is immediately recallable from any other on the same host.
-        </p>
-        <div className="mt-4 overflow-hidden rounded-lg border border-[var(--border-subtle)]">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr style={{ background: 'var(--bg-elevated)' }}>
-                <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">Tool</th>
-                <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {memoryTools.map(({ name, description }) => (
-                <tr key={name} className="border-b border-[var(--border-subtle)] last:border-0">
-                  <td className="px-4 py-3 font-mono text-sm text-coral-bright">{name}</td>
-                  <td className="px-4 py-3 text-sm text-text-secondary">{description}</td>
+      {/* Panel 2: Memory Tools */}
+      <section
+        id="agent-tools-memory"
+        className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
+      >
+        <div className="mx-auto w-full max-w-4xl">
+          <h2 className="font-display text-2xl font-semibold text-text-primary">
+            ⟩ Agent Tools &mdash; Memory (optional)
+          </h2>
+          <p className="mt-4 text-text-secondary">
+            When the <a href="#memory" className="text-cyan-bright hover:underline">AI agent memory service</a> is enabled, every adapter — OpenClaw, Claude Code, Claude Desktop / Dispatch, and Gemini — exposes the same four tools backed by a <strong>shared, file-backed store</strong>. A fact remembered from one adapter is immediately recallable from any other on the same host.
+          </p>
+          <div className="mt-6 overflow-hidden rounded-lg border border-[var(--border-subtle)]">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr style={{ background: 'var(--bg-elevated)' }}>
+                  <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">Tool</th>
+                  <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">Description</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {memoryTools.map(({ name, description }) => (
+                  <tr key={name} className="border-b border-[var(--border-subtle)] last:border-0">
+                    <td className="px-4 py-3 font-mono text-sm text-coral-bright">{name}</td>
+                    <td className="px-4 py-3 text-sm text-text-secondary">{description}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-    </section>
+        <ScrollArrow nextId="deployment" label="Continue to Deployment" />
+      </section>
+    </>
   )
 }

@@ -1,3 +1,5 @@
+import ScrollArrow from './ScrollArrow'
+
 const robots = [
   {
     id: 'AMR',
@@ -31,66 +33,71 @@ const robots = [
 
 export default function Simulation() {
   return (
-    <section id="simulation" className="scroll-mt-20 border-t border-[var(--border-subtle)] px-6 py-16">
-      <div className="mx-auto max-w-4xl">
-        <h2 className="font-display text-2xl font-semibold text-text-primary">
-          ⟩ Built-in Simulation
-        </h2>
-        <p className="mt-4 text-text-secondary">
-          AgenticROS ships <strong>Gazebo Harmonic</strong> simulation assets out of the box &mdash; an
-          indoor world, a 2-wheel <strong>AMR</strong>, a 6-DOF <strong>arm manipulator</strong>, and a{' '}
-          <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">
-            ros_gz_bridge
-          </code>{' '}
-          config that exposes everything on the <em>same topic names</em> the real-robot plugin already uses. Code
-          you write against sim runs unchanged on a real RealSense + diff-drive base.
-        </p>
-        <p className="mt-3 text-text-secondary">
-          Spin up either robot with one command from the{' '}
-          <a href="#quick-start" className="text-cyan-bright hover:underline">
-            <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">agenticros</code> CLI
-          </a>
-          {' '}&mdash; no separate Docker compose, no manual <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm">colcon build</code>{' '}
-          incantation. Add <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">--rviz</code> to either to also bring up an RViz panel.
-        </p>
+    <>
+      {/* Panel 1: Robots */}
+      <section
+        id="simulation"
+        className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
+      >
+        <div className="mx-auto w-full max-w-4xl">
+          <h2 className="font-display text-2xl font-semibold text-text-primary">
+            ⟩ Built-in Simulation
+          </h2>
+          <p className="mt-4 text-text-secondary">
+            AgenticROS ships <strong>Gazebo Harmonic</strong> simulation assets out of the box &mdash; an
+            indoor world, a 2-wheel <strong>AMR</strong>, a 6-DOF <strong>arm manipulator</strong>, and a{' '}
+            <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">
+              ros_gz_bridge
+            </code>{' '}
+            config that exposes everything on the <em>same topic names</em> the real-robot plugin already uses. Code
+            you write against sim runs unchanged on a real RealSense + diff-drive base.
+          </p>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          {robots.map(({ id, name, summary, specs, command }) => (
-            <div
-              key={id}
-              className="rounded-xl border border-[var(--border-subtle)] p-6"
-              style={{ background: 'var(--surface-card)' }}
-            >
-              <div className="flex items-center gap-2">
-                <span className="rounded bg-cyan-bright/20 px-2 py-0.5 font-mono text-xs font-medium text-cyan-bright">
-                  {id}
-                </span>
-                <h3 className="font-display font-medium text-text-primary">{name}</h3>
-              </div>
-              <p className="mt-3 text-sm text-text-secondary">{summary}</p>
-              <dl className="mt-4 space-y-2 text-sm">
-                {specs.map(({ label, value }) => (
-                  <div key={label} className="flex flex-col gap-0.5 sm:flex-row sm:gap-2">
-                    <dt className="font-medium text-text-primary sm:w-32 sm:shrink-0">{label}</dt>
-                    <dd className="text-text-secondary">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-              <pre
-                className="mt-4 overflow-x-auto rounded-lg p-3 font-mono text-sm text-text-primary"
-                style={{ background: 'var(--surface-inset-highlight)' }}
+          <div className="mt-6 grid gap-4 lg:grid-cols-2">
+            {robots.map(({ id, name, summary, specs, command }) => (
+              <div
+                key={id}
+                className="rounded-xl border border-[var(--border-subtle)] p-5"
+                style={{ background: 'var(--surface-card)' }}
               >
-                <code>{command}</code>
-              </pre>
-            </div>
-          ))}
+                <div className="flex items-center gap-2">
+                  <span className="rounded bg-cyan-bright/20 px-2 py-0.5 font-mono text-xs font-medium text-cyan-bright">
+                    {id}
+                  </span>
+                  <h3 className="font-display font-medium text-text-primary">{name}</h3>
+                </div>
+                <p className="mt-3 text-sm text-text-secondary">{summary}</p>
+                <dl className="mt-3 space-y-1.5 text-sm">
+                  {specs.map(({ label, value }) => (
+                    <div key={label} className="flex flex-col gap-0.5 sm:flex-row sm:gap-2">
+                      <dt className="font-medium text-text-primary sm:w-32 sm:shrink-0">{label}</dt>
+                      <dd className="text-text-secondary">{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <pre
+                  className="mt-3 overflow-x-auto rounded-lg p-3 font-mono text-sm text-text-primary"
+                  style={{ background: 'var(--surface-inset-highlight)' }}
+                >
+                  <code>{command}</code>
+                </pre>
+              </div>
+            ))}
+          </div>
         </div>
+        <ScrollArrow nextId="simulation-why" label="Why simulation matters" />
+      </section>
 
-        <div className="mt-10">
-          <h3 className="font-display text-lg font-medium text-text-primary">
-            Why simulation matters here
-          </h3>
-          <ul className="mt-3 list-disc space-y-2 pl-6 text-text-secondary">
+      {/* Panel 2: Why simulation matters */}
+      <section
+        id="simulation-why"
+        className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
+      >
+        <div className="mx-auto w-full max-w-4xl">
+          <h2 className="font-display text-2xl font-semibold text-text-primary">
+            ⟩ Why Simulation Matters Here
+          </h2>
+          <ul className="mt-6 list-disc space-y-3 pl-6 text-text-secondary">
             <li>
               <strong>Topic parity.</strong>{' '}
               <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm">/cmd_vel</code>,{' '}
@@ -116,28 +123,29 @@ export default function Simulation() {
               ships both robots, both bridges, and both RViz configs &mdash; pick AMR or arm at launch time.
             </li>
           </ul>
-        </div>
 
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href="https://github.com/agenticros/agenticros/blob/main/ros2_ws/src/agenticros_sim/README.md"
-            className="inline-flex items-center rounded-lg bg-cyan-bright px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-mid"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Simulation README
-          </a>
-          <a
-            href="https://github.com/agenticros/agenticros/blob/main/packages/agenticros-cli/README.md"
-            className="inline-flex items-center rounded-lg border border-[var(--border-subtle)] px-4 py-2 text-sm font-medium text-text-primary transition hover:bg-bg-elevated"
-            style={{ background: 'var(--surface-card)' }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            agenticros CLI reference
-          </a>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="https://github.com/agenticros/agenticros/blob/main/ros2_ws/src/agenticros_sim/README.md"
+              className="inline-flex items-center rounded-lg bg-cyan-bright px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-mid"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Simulation README
+            </a>
+            <a
+              href="https://github.com/agenticros/agenticros/blob/main/packages/agenticros-cli/README.md"
+              className="inline-flex items-center rounded-lg border border-[var(--border-subtle)] px-4 py-2 text-sm font-medium text-text-primary transition hover:bg-bg-elevated"
+              style={{ background: 'var(--surface-card)' }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              agenticros CLI reference
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+        <ScrollArrow nextId="try-it" label="Continue to Try It" />
+      </section>
+    </>
   )
 }

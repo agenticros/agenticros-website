@@ -1,3 +1,5 @@
+import ScrollArrow from './ScrollArrow'
+
 const modes = [
   {
     id: 'A',
@@ -31,19 +33,22 @@ const modes = [
 
 export default function DeploymentModes() {
   return (
-    <section id="deployment" className="scroll-mt-20 border-t border-[var(--border-subtle)] px-6 py-16">
-      <div className="mx-auto max-w-4xl">
+    <section
+      id="deployment"
+      className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
+    >
+      <div className="mx-auto w-full max-w-4xl">
         <h2 className="font-display text-2xl font-semibold text-text-primary">
           ⟩ Deployment Modes
         </h2>
         <p className="mt-4 text-text-secondary">
           AgenticROS supports four deployment modes depending on where your AI agent (<a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>, <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude desktop</a> / <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a>, <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a>, or another) runs relative to the robot.
         </p>
-        <div className="mt-8 space-y-6">
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
           {modes.map(({ id, name, summary, bestFor }) => (
             <div
               key={id}
-              className="rounded-xl border border-[var(--border-subtle)] p-6"
+              className="rounded-xl border border-[var(--border-subtle)] p-5"
               style={{ background: 'var(--surface-card)' }}
             >
               <div className="flex items-center gap-2">
@@ -59,12 +64,13 @@ export default function DeploymentModes() {
             </div>
           ))}
         </div>
-        <p className="mt-8 text-text-muted">
+        <p className="mt-6 text-text-muted">
           <a href="https://github.com/agenticros/agenticros/blob/main/docs/architecture.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">
             Full architecture and diagrams →
           </a>
         </p>
       </div>
+      <ScrollArrow nextId="simulation" label="Continue to Simulation" />
     </section>
   )
 }

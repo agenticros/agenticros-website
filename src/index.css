@@ -46,3 +46,18 @@ body {
   background: var(--accent-bright);
   color: var(--bg-deep);
 }
+
+@keyframes scroll-arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.scroll-arrow-bounce {
+  animation: scroll-arrow-bounce 2s ease-in-out infinite;
+}
+
+/* Each "panel" section fits exactly the viewport below the sticky header. */
+.panel {
+  min-height: calc(100vh - 4rem);
+  scroll-margin-top: 4rem;
+}

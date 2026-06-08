@@ -1,3 +1,5 @@
+import ScrollArrow from './ScrollArrow'
+
 const examples = [
   '"Move forward 1 meter" — publishes velocity to /cmd_vel',
   '"Find the bottle" — Find Object skill: rotates until YOLOv8 spots it',
@@ -13,8 +15,11 @@ const examples = [
 
 export default function TryIt() {
   return (
-    <section id="try-it" className="scroll-mt-20 border-t border-[var(--border-subtle)] px-6 py-16">
-      <div className="mx-auto max-w-4xl">
+    <section
+      id="try-it"
+      className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
+    >
+      <div className="mx-auto w-full max-w-4xl">
         <h2 className="font-display text-2xl font-semibold text-text-primary">
           ⟩ Try It
         </h2>
@@ -33,6 +38,7 @@ export default function TryIt() {
           ))}
         </div>
       </div>
+      <ScrollArrow nextId="skills" label="Continue to Skills" />
     </section>
   )
 }
