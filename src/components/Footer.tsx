@@ -21,8 +21,11 @@ export default function Footer() {
           <a href="https://github.com/agenticros/agenticros/blob/main/docs/skills.md" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
             Skills guide
           </a>
-          <a href="https://github.com/agenticros/agenticros-skills" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
-            Curated skills
+          <a href="https://skills.agenticros.com" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
+            Skills marketplace
+          </a>
+          <a href="https://skills.agenticros.com/submit" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
+            Submit a skill
           </a>
           <a href="https://github.com/agenticros/agenticros/blob/main/docs/memory.md" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
             Memory

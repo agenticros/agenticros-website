@@ -3,8 +3,10 @@ import ScrollArrow from './ScrollArrow'
 const referenceSkills = [
   {
     title: 'Find Object',
+    slug: 'find',
     pkg: 'agenticros-skill-find',
-    href: 'https://github.com/agenticros/agenticros-skill-find',
+    marketplaceHref: 'https://skills.agenticros.com/s/find',
+    githubHref: 'https://github.com/agenticros/agenticros-skill-find',
     description: (
       <>
         One-shot visual search. Rotate the robot in place and stop the moment{' '}
@@ -22,8 +24,10 @@ const referenceSkills = [
   },
   {
     title: 'Follow Me',
+    slug: 'followme',
     pkg: 'agenticros-skill-followme',
-    href: 'https://github.com/agenticros/agenticros-skill-followme',
+    marketplaceHref: 'https://skills.agenticros.com/s/followme',
+    githubHref: 'https://github.com/agenticros/agenticros-skill-followme',
     description: (
       <>
         Depth-based person following with optional Ollama / VLM, turn-to-follow,
@@ -35,9 +39,11 @@ const referenceSkills = [
 ]
 
 const cliCommands = [
+  { cmd: 'agenticros skills search <q>', desc: <>search the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">marketplace</a> by keyword (e.g. <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">follow</code>)</> },
+  { cmd: 'agenticros skills install <slug>', desc: 'clone the GitHub repo, build it, register it with OpenClaw, and sync the tools allowlist — one step' },
   { cmd: 'agenticros skills', desc: 'list registered skills + cloned-but-unregistered candidates on disk' },
-  { cmd: 'agenticros skills discover', desc: 'interactive picker over candidates the CLI found' },
-  { cmd: 'agenticros skills add <path-or-name>', desc: 'register a clone (path) or npm package' },
+  { cmd: 'agenticros skills discover', desc: 'interactive picker over local clones the CLI found' },
+  { cmd: 'agenticros skills add <path-or-name>', desc: 'register a local clone (path) or npm package without the marketplace' },
   { cmd: 'agenticros skills remove <id-or-name>', desc: 'unregister a skill' },
   { cmd: 'agenticros skills sync', desc: <>refresh OpenClaw <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">contracts.tools</code> allowlist</> },
 ]
@@ -58,26 +64,66 @@ export default function Skills() {
             AgenticROS <strong>skills</strong> are optional packages that add tools and behaviors to the OpenClaw plugin (e.g. <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">find_object</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">follow_robot</code>). Each skill registers its own tools and reads its config from <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">config.skills.&lt;skillId&gt;</code>.
           </p>
           <p className="mt-3 text-text-secondary">
-            A <a href="https://github.com/agenticros/agenticros-skills" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">curated list of AgenticROS skills</a> helps robotics developers discover available skills and add new ones via pull request. Use either reference skill below as a template to build and share your own.
+            Browse and install community skills from the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">AgenticROS Skills Marketplace</a> &mdash; search, install with one command, and submit your own (sign in with GitHub). Use either reference skill below as a template to build and share your own.
           </p>
+          <div className="mt-4">
+            <a
+              href="https://skills.agenticros.com"
+              className="inline-flex items-center gap-2 rounded-lg bg-cyan-bright px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-mid"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit Skills Marketplace →
+            </a>
+          </div>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {referenceSkills.map(({ title, pkg, href, description }) => (
+          <p className="mt-6 text-xs uppercase tracking-wider text-text-muted">
+            Featured on the marketplace
+          </p>
+          <div className="mt-2 grid gap-4 sm:grid-cols-2">
+            {referenceSkills.map(({ title, slug, pkg, marketplaceHref, githubHref, description }) => (
               <div
                 key={pkg}
-                className="rounded-xl border border-[var(--border-subtle)] p-5"
+                className="flex flex-col gap-3 rounded-xl border border-[var(--border-subtle)] p-5"
                 style={{ background: 'var(--surface-card)' }}
               >
-                <h3 className="font-display font-medium text-text-primary">{title}</h3>
-                <a
-                  href={href}
-                  className="mt-1 inline-block font-mono text-xs text-coral-bright hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <div>
+                  <a
+                    href={marketplaceHref}
+                    className="font-display font-medium text-text-primary transition hover:text-coral-bright"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {title}
+                  </a>
+                  <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+                    <a
+                      href={marketplaceHref}
+                      className="text-cyan-bright hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View on marketplace
+                    </a>
+                    <span className="text-text-muted">·</span>
+                    <a
+                      href={githubHref}
+                      className="font-mono text-coral-bright hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {pkg}
+                    </a>
+                  </div>
+                </div>
+                <p className="text-sm text-text-secondary">{description}</p>
+                <code
+                  className="mt-auto block overflow-x-auto rounded-md px-3 py-2 font-mono text-xs text-text-primary"
+                  style={{ background: 'var(--surface-inset-highlight)' }}
                 >
-                  {pkg}
-                </a>
-                <p className="mt-3 text-sm text-text-secondary">{description}</p>
+                  <span className="select-none text-coral-bright">$</span>{' '}
+                  npx agenticros skills install {slug}
+                </code>
               </div>
             ))}
           </div>
@@ -95,7 +141,7 @@ export default function Skills() {
             ⟩ Manage Skills with the CLI
           </h2>
           <p className="mt-4 text-text-secondary">
-            The <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">agenticros skills</code> command (and the <strong>Manage skills</strong> menu entry) does everything for you: it scans the usual locations for clones, edits <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">~/.openclaw/openclaw.json</code>, refreshes the plugin manifest's <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">contracts.tools</code> allowlist, and reminds you to bounce the gateway.
+            The headline flow is <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">agenticros skills install &lt;slug&gt;</code> — the CLI hits the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">marketplace API</a> for the install descriptor, clones the GitHub repo, runs <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">pnpm install && pnpm build</code>, edits <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">~/.openclaw/openclaw.json</code>, refreshes the plugin manifest's <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">contracts.tools</code> allowlist, and reminds you to bounce the gateway. The local <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">add</code> / <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">discover</code> subcommands are still there for skills you're developing or haven't published yet.
           </p>
 
           <div className="mt-6 overflow-hidden rounded-lg border border-[var(--border-subtle)]">
@@ -134,36 +180,31 @@ export default function Skills() {
             ⟩ Skills &mdash; Typical First-Run
           </h2>
           <p className="mt-4 text-text-secondary">
-            Clone the skills you want, build them, then point the CLI at them &mdash; from anywhere on disk.
+            One command &mdash; the CLI talks to the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Skills Marketplace</a>, clones the skill's repo, builds it, registers it, and reminds you to bounce the gateway.
           </p>
           <pre
             className="mt-4 overflow-x-auto rounded-lg bg-bg-elevated p-4 font-mono text-sm text-text-primary"
             style={{ background: 'var(--surface-inset-highlight)' }}
           >
-            <code>{`# Clone whichever skills you want, anywhere near the repo
-cd ~/Projects
-git clone https://github.com/agenticros/agenticros-skill-followme
-git clone https://github.com/agenticros/agenticros-skill-find
+            <code>{`# Search the marketplace
+npx agenticros skills search follow
 
-# Build them (skills compile independently of the main workspace)
-cd agenticros-skill-followme && pnpm install && pnpm build && cd ..
-cd agenticros-skill-find     && pnpm install && pnpm build && cd ..
+# One-step install (clones, builds, registers, syncs)
+npx agenticros skills install followme
+npx agenticros skills install find
 
-# Register both — short ids resolve against the discovered clones
-agenticros skills add followme
-agenticros skills add find
-agenticros skills sync                  # update contracts.tools
+# Restart the gateway to load the new skills
 systemctl --user restart openclaw-gateway.service`}</code>
           </pre>
 
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href="https://github.com/agenticros/agenticros-skills"
+              href="https://skills.agenticros.com"
               className="inline-flex items-center rounded-lg bg-cyan-bright px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-mid"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Discover skills (agenticros-skills)
+              Open Skills Marketplace
             </a>
             <a
               href="https://github.com/agenticros/agenticros/blob/main/docs/skills.md"

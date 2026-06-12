@@ -79,7 +79,7 @@ export default function QuickStart() {
             <li><strong>First-time setup</strong> &mdash; one wizard for workspace deps, ROS 2 build, OpenClaw plugin, API key, and a final health check. Idempotent &mdash; rerun any time.</li>
             <li><strong>Launch with real robot</strong> &mdash; brings up RealSense + motors + the MCP server.</li>
             <li><strong>Launch with simulation</strong> &mdash; choose between a 2-wheel <strong>AMR</strong> in Gazebo + RViz or a 6-DOF <strong>arm</strong> manipulator (UR5e-shaped, per-joint position control).</li>
-            <li><strong>Manage skills</strong> &mdash; discover, register, and remove AgenticROS <a href="#skills" className="text-cyan-bright hover:underline">skills</a> (Find Object, Follow Me, your own).</li>
+            <li><strong>Manage skills</strong> &mdash; search the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Skills Marketplace</a>, install with one command, plus discover / register / remove local <a href="#skills" className="text-cyan-bright hover:underline">skills</a> (Find Object, Follow Me, your own).</li>
             <li><strong>Stop everything</strong> &mdash; cleanly tears down whatever the CLI spawned (pidfiles + logs under <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm">/tmp/agenticros-*</code>).</li>
           </ul>
         </div>
@@ -104,7 +104,7 @@ agenticros up real              # real robot stack
 agenticros up sim-amr           # simulated AMR (Gazebo + RViz)
 agenticros up sim-arm           # simulated 6-DOF arm
 agenticros mode <real|sim>      # swap the active config profile
-agenticros skills               # list / discover / add / remove skills
+agenticros skills               # list / search / install / discover / add / remove
 agenticros doctor               # coloured health check (includes skills)
 agenticros down                 # stop everything we started`}</code>
             </pre>
