@@ -61,7 +61,7 @@ export default function Hero() {
       >
         Get started
       </a>
-      <ScrollArrow nextId="hero-video" label="Watch the demo" />
+      <ScrollArrow nextId="how-it-works" label="See how AgenticROS works" />
     </section>
   )
 }

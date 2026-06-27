@@ -20,8 +20,8 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <HeroVideo />
         <HowItWorks />
+        <HeroVideo />
         <QuickStart />
         <Features />
         <AgentTools />

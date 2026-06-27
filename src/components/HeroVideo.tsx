@@ -16,7 +16,7 @@ export default function HeroVideo() {
           allowFullScreen
         />
       </div>
-      <ScrollArrow nextId="how-it-works" label="See how it works" />
+      <ScrollArrow nextId="quick-start" label="Continue to Quick Start" />
     </section>
   )
 }
