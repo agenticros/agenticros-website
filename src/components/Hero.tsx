@@ -24,17 +24,18 @@ export default function Hero() {
       <p className="mt-2 max-w-2xl text-xl font-semibold uppercase tracking-wide text-coral-bright md:text-2xl">
         The agentic AI for robotics
       </p>
-      <p className="mt-3 max-w-3xl text-text-muted">
-        Use <strong>multiple AI agents</strong> ({' '}
-        <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>
-        , <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>, <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Desktop</a>, <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a>, <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a>, <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>, etc) to control <strong>real ROS 2 robots</strong> or <strong>simulated AMRs and arms</strong> &mdash; all from a single command.
-      </p>
       <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
         <img src="/openclaw.png" alt="OpenClaw" className="h-16 w-16 object-contain md:h-20 md:w-20" />
         <img src="/claudecode.png" alt="Claude Code, Claude desktop, and Dispatch" className="h-16 w-16 object-contain md:h-20 md:w-20" />
         <img src="/gemini.png" alt="Google Gemini" className="h-16 w-16 object-contain md:h-20 md:w-20" />
         <img src="/ros.webp" alt="ROS" className="h-16 w-16 object-contain md:h-20 md:w-20" />
       </div>
+      <p className="mt-3 max-w-3xl text-text-muted">
+        Use <strong>multiple AI agents</strong> ({' '}
+        <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>
+        , <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>, <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Desktop</a>, <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a>, <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a>, <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>, etc) to control <strong>real ROS 2 robots</strong> or <strong>simulated AMRs and arms</strong> &mdash; all from a single command.
+      </p>
+
       <div className="mt-3 w-full max-w-2xl">
         <div
           className="rounded-xl border border-[var(--border-subtle)] p-3 text-left"
