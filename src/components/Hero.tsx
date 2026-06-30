@@ -8,7 +8,7 @@ export default function Hero() {
     >
       <div className="flex w-full max-w-[21rem] flex-col items-center md:max-w-[30rem]">
         <img
-          src="/agenticros-logo-only-removebg-preview.png"
+          src="/agenticros-a.png"
           alt=""
           aria-hidden="true"
           className="w-36 object-contain md:w-44"

@@ -17,7 +17,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
         <a href="#" className="flex h-10 w-52 shrink-0 items-center gap-2" aria-label="AgenticROS home">
           <img
-            src="/agenticros-logo-only.png"
+            src="/agenticros-a.png"
             alt=""
             aria-hidden="true"
             className="h-10 w-10 object-cover object-center"
