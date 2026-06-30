@@ -108,7 +108,7 @@ export default function Simulation() {
               all match the real robot. Skills, MCP tools, and OpenClaw chats need <em>zero</em> changes between sim and real.
             </li>
             <li>
-              <strong>Try the agents without hardware.</strong> Walk a Claude Desktop or Gemini conversation through{' '}
+              <strong>Try the agents without hardware.</strong> Walk a Claude Desktop, Codex, or Gemini conversation through{' '}
               <em>"navigate to the door"</em> or <em>"wave the elbow"</em> on a laptop, before you touch a real motor.
             </li>
             <li>

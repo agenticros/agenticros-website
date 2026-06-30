@@ -10,11 +10,19 @@ const adapters = [
     },
   },
   {
-    agent: 'Claude / Codex',
-    setup: 'claude mcp add or codex mcp add → absolute path to dist/index.js',
+    agent: 'Claude Code',
+    setup: 'claude mcp add → absolute path to dist/index.js (or .mcp.json in repo)',
     doc: {
       label: 'MCP adapter README',
       href: 'https://github.com/agenticros/agenticros/blob/main/packages/agenticros-claude-code/README.md',
+    },
+  },
+  {
+    agent: 'OpenAI Codex',
+    setup: 'agenticros codex setup → writes ~/.codex/config.toml with absolute MCP path',
+    doc: {
+      label: 'Codex setup guide',
+      href: 'https://github.com/agenticros/agenticros/blob/main/docs/codex-setup.md',
     },
   },
   {
@@ -109,7 +117,7 @@ export default function QuickStart() {
   Tail logs`}</code>
           </pre>
           <ul className="mt-4 list-disc space-y-2 pl-6 text-sm text-text-secondary">
-            <li><strong>First-time setup</strong> &mdash; one wizard for workspace deps, ROS 2 build, OpenClaw plugin, API key, and a final health check. Idempotent &mdash; rerun any time.</li>
+            <li><strong>First-time setup</strong> &mdash; one wizard for workspace deps, ROS 2 build, OpenClaw plugin, Codex MCP config, API key, and a final health check. Idempotent &mdash; rerun any time.</li>
             <li><strong>Launch with real robot</strong> &mdash; brings up RealSense + motors + the MCP server.</li>
             <li><strong>Launch with simulation</strong> &mdash; choose between a 2-wheel <strong>AMR</strong> in Gazebo + RViz or a 6-DOF <strong>arm</strong> manipulator (UR5e-shaped, per-joint position control).</li>
             <li><strong>Manage skills</strong> &mdash; <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">create-skill</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">publish</code>, search the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Skills Marketplace</a>, and install with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">skills install owner/skill</code> — plus discover / register local <a href="#skills" className="text-cyan-bright hover:underline">skills</a>.</li>
@@ -131,7 +139,9 @@ export default function QuickStart() {
           <div className="mt-6">
             <h3 className="text-lg font-medium text-text-primary">3. Or skip the menu &mdash; every option has a direct command</h3>
             <pre className="mt-2 overflow-x-auto rounded-lg bg-bg-elevated p-4 font-mono text-sm text-text-primary" style={{ background: 'var(--surface-inset-highlight)' }}>
-              <code>{`npx agenticros init             # one-time workspace + plugin + API key
+              <code>{`npx agenticros init             # one-time workspace + plugin + Codex MCP + API key
+agenticros codex setup          # register AgenticROS MCP for OpenAI Codex CLI
+agenticros codex doctor         # validate ~/.codex/config.toml paths
 agenticros up real              # real robot stack
 agenticros up sim-amr           # simulated AMR (Gazebo + RViz)
 agenticros up sim-arm           # simulated 6-DOF arm

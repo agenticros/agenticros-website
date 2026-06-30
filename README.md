@@ -1,6 +1,6 @@
 # AgenticROS Website
 
-Marketing site for **AgenticROS** — natural language control of ROS2 robots through messaging apps, with support for **multiple AI agents** including [OpenClaw](https://openclaw.ai/), [Claude Code](https://claude.com/product/claude-code), [Claude desktop & Dispatch](https://claude.com/download), [Google Gemini](https://ai.google.dev/gemini-api/docs), and [MCP](https://modelcontextprotocol.io/docs/getting-started/intro). Styled to match the OpenClaw look and feel.
+Marketing site for **AgenticROS** — natural language control of ROS2 robots through messaging apps, with support for **multiple AI agents** including [OpenClaw](https://openclaw.ai/), [Claude Code](https://claude.com/product/claude-code), [OpenAI Codex CLI](https://developers.openai.com/codex/cli/), [Claude desktop & Dispatch](https://claude.com/download), [Google Gemini](https://ai.google.dev/gemini-api/docs), and [MCP](https://modelcontextprotocol.io/docs/getting-started/intro). Styled to match the OpenClaw look and feel.
 
 ## Run
 
@@ -22,8 +22,8 @@ npm run preview
 
 Add your project assets to `public/`:
 
-- `agenticros-transparent.png` — icon/logo (used as favicon and header logo)
-- `agenticros-mascot-transparent.png` — mascot (used in hero)
+- `codex.png` — OpenAI Codex CLI logo (hero)
+- `openclaw.png`, `claudecode.png`, `gemini.png`, `ros.webp` — other hero logos
 
 ## Repo links
 
