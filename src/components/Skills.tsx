@@ -3,9 +3,9 @@ import ScrollArrow from './ScrollArrow'
 const referenceSkills = [
   {
     title: 'Find Object',
-    slug: 'find',
+    marketplaceRef: 'chrismatthieu/find',
     pkg: 'agenticros-skill-find',
-    marketplaceHref: 'https://skills.agenticros.com/s/find',
+    marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/find',
     githubHref: 'https://github.com/agenticros/agenticros-skill-find',
     description: (
       <>
@@ -24,9 +24,9 @@ const referenceSkills = [
   },
   {
     title: 'Follow Me',
-    slug: 'followme',
+    marketplaceRef: 'chrismatthieu/followme',
     pkg: 'agenticros-skill-followme',
-    marketplaceHref: 'https://skills.agenticros.com/s/followme',
+    marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/followme',
     githubHref: 'https://github.com/agenticros/agenticros-skill-followme',
     description: (
       <>
@@ -39,8 +39,11 @@ const referenceSkills = [
 ]
 
 const cliCommands = [
+  { cmd: 'agenticros create-skill <slug> [--template hello|robot|camera|depth]', desc: 'scaffold a new skill package in the current directory' },
+  { cmd: 'agenticros skills dev [--invoke <tool>]', desc: 'load the skill locally without restarting OpenClaw' },
+  { cmd: 'agenticros publish [--graduate]', desc: 'validate, push to GitHub, and submit to skills.agenticros.com' },
   { cmd: 'agenticros skills search <q>', desc: <>search the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">marketplace</a> by keyword (e.g. <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">follow</code>)</> },
-  { cmd: 'agenticros skills install <slug>', desc: 'clone the GitHub repo, build it, register it with OpenClaw, and sync the tools allowlist — one step' },
+  { cmd: 'agenticros skills install <owner/skill>', desc: 'clone the GitHub repo, build it, register it with OpenClaw, and sync the tools allowlist — one step' },
   { cmd: 'agenticros skills', desc: 'list registered skills + cloned-but-unregistered candidates on disk' },
   { cmd: 'agenticros skills discover', desc: 'interactive picker over local clones the CLI found' },
   { cmd: 'agenticros skills add <path-or-name>', desc: 'register a local clone (path) or npm package without the marketplace' },
@@ -61,10 +64,10 @@ export default function Skills() {
             ⟩ Skills
           </h2>
           <p className="mt-4 text-text-secondary">
-            AgenticROS <strong>skills</strong> are optional packages that add tools and behaviors to the OpenClaw plugin (e.g. <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">find_object</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">follow_robot</code>). Each skill registers its own tools and reads its config from <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">config.skills.&lt;skillId&gt;</code>.
+            AgenticROS <strong>skills</strong> are optional packages that add tools and behaviors to the OpenClaw plugin (e.g. <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">find_object</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">follow_person</code>). Each skill registers its own tools and reads its config from <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">config.skills.&lt;skillId&gt;</code>.
           </p>
           <p className="mt-3 text-text-secondary">
-            Browse and install community skills from the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">AgenticROS Skills Marketplace</a> &mdash; search, install with one command, and submit your own (sign in with GitHub). Use either reference skill below as a template to build and share your own.
+            <strong>Create</strong> with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">npx agenticros create-skill</code>, <strong>publish</strong> with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">npx agenticros publish</code>, and <strong>install</strong> from the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">AgenticROS Skills Marketplace</a> using namespaced refs like <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">owner/skill-id</code>.
           </p>
           <div className="mt-4">
             <a
@@ -81,7 +84,7 @@ export default function Skills() {
             Featured on the marketplace
           </p>
           <div className="mt-2 grid gap-4 sm:grid-cols-2">
-            {referenceSkills.map(({ title, slug, pkg, marketplaceHref, githubHref, description }) => (
+            {referenceSkills.map(({ title, marketplaceRef, pkg, marketplaceHref, githubHref, description }) => (
               <div
                 key={pkg}
                 className="flex flex-col gap-3 rounded-xl border border-[var(--border-subtle)] p-5"
@@ -122,7 +125,7 @@ export default function Skills() {
                   style={{ background: 'var(--surface-inset-highlight)' }}
                 >
                   <span className="select-none text-coral-bright">$</span>{' '}
-                  npx agenticros skills install {slug}
+                  npx agenticros skills install {marketplaceRef}
                 </code>
               </div>
             ))}
@@ -141,7 +144,7 @@ export default function Skills() {
             ⟩ Manage Skills with the CLI
           </h2>
           <p className="mt-4 text-text-secondary">
-            The headline flow is <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">agenticros skills install &lt;slug&gt;</code> — the CLI hits the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">marketplace API</a> for the install descriptor, clones the GitHub repo, runs <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">pnpm install && pnpm build</code>, edits <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">~/.openclaw/openclaw.json</code>, refreshes the plugin manifest's <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">contracts.tools</code> allowlist, and reminds you to bounce the gateway. The local <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">add</code> / <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">discover</code> subcommands are still there for skills you're developing or haven't published yet.
+            Scaffold with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">create-skill</code>, test with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">skills dev</code>, and publish with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">publish</code>. To install a community skill, use <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">agenticros skills install &lt;owner/skill&gt;</code> — the CLI hits the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">marketplace API</a>, clones the GitHub repo, runs <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">pnpm install && pnpm build</code>, edits <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">~/.openclaw/openclaw.json</code>, refreshes the plugin manifest's <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">contracts.tools</code> allowlist, and reminds you to bounce the gateway.
           </p>
 
           <div className="mt-6 overflow-hidden rounded-lg border border-[var(--border-subtle)]">
@@ -177,23 +180,26 @@ export default function Skills() {
       >
         <div className="mx-auto w-full max-w-4xl">
           <h2 className="font-display text-2xl font-semibold text-text-primary">
-            ⟩ Skills &mdash; Typical First-Run
+            ⟩ Skills &mdash; Create, Publish &amp; Install
           </h2>
           <p className="mt-4 text-text-secondary">
-            One command &mdash; the CLI talks to the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Skills Marketplace</a>, clones the skill's repo, builds it, registers it, and reminds you to bounce the gateway.
+            Build your own skill or install from the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Skills Marketplace</a>.
           </p>
           <pre
             className="mt-4 overflow-x-auto rounded-lg bg-bg-elevated p-4 font-mono text-sm text-text-primary"
             style={{ background: 'var(--surface-inset-highlight)' }}
           >
-            <code>{`# Search the marketplace
+            <code>{`# Create and publish your own skill
+npx agenticros create-skill my-skill --template robot
+cd agenticros-skill-my-skill && npm install && npm run dev
+npx agenticros publish
+
+# Or install from the marketplace (owner/skill-id)
 npx agenticros skills search follow
+npx agenticros skills install chrismatthieu/followme
+npx agenticros skills install chrismatthieu/find
 
-# One-step install (clones, builds, registers, syncs)
-npx agenticros skills install followme
-npx agenticros skills install find
-
-# Restart the gateway to load the new skills
+# Restart the gateway to load new skills
 systemctl --user restart openclaw-gateway.service`}</code>
           </pre>
 
