@@ -3,7 +3,9 @@ import Hero from './components/Hero'
 import HeroVideo from './components/HeroVideo'
 import HowItWorks from './components/HowItWorks'
 import QuickStart from './components/QuickStart'
+import ChoosePath from './components/ChoosePath'
 import Features from './components/Features'
+import Teleop from './components/Teleop'
 import AgentTools from './components/AgentTools'
 import DeploymentModes from './components/DeploymentModes'
 import Simulation from './components/Simulation'
@@ -23,11 +25,13 @@ function App() {
         <HowItWorks />
         <HeroVideo />
         <QuickStart />
+        <ChoosePath />
         <Features />
         <AgentTools />
         <DeploymentModes />
         <Simulation />
         <TryIt />
+        <Teleop />
         <Skills />
         <Memory />
         <Packages />

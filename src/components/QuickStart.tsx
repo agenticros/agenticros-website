@@ -1,9 +1,43 @@
 import ScrollArrow from './ScrollArrow'
 
+const adapters = [
+  {
+    agent: 'OpenClaw',
+    setup: 'agenticros init installs the plugin; chat via WhatsApp, Telegram, Discord, Slack, …',
+    doc: {
+      label: 'CLI README',
+      href: 'https://github.com/agenticros/agenticros/blob/main/packages/agenticros-cli/README.md',
+    },
+  },
+  {
+    agent: 'Claude / Codex',
+    setup: 'claude mcp add or codex mcp add → absolute path to dist/index.js',
+    doc: {
+      label: 'MCP adapter README',
+      href: 'https://github.com/agenticros/agenticros/blob/main/packages/agenticros-claude-code/README.md',
+    },
+  },
+  {
+    agent: 'Gemini',
+    setup: 'Set GEMINI_API_KEY and run the gemini CLI package',
+    doc: {
+      label: 'Gemini README',
+      href: 'https://github.com/agenticros/agenticros/blob/main/packages/agenticros-gemini/README.md',
+    },
+  },
+  {
+    agent: 'NemoClaw',
+    setup: 'Sandbox plugin + host rosbridge stack on the robot',
+    doc: {
+      label: 'NemoClaw guide',
+      href: 'https://github.com/agenticros/agenticros/blob/main/docs/nemoclaw.md',
+    },
+  },
+]
+
 export default function QuickStart() {
   return (
     <>
-      {/* Panel 1: Intro + install */}
       <section
         id="quick-start"
         className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
@@ -45,7 +79,6 @@ export default function QuickStart() {
         <ScrollArrow nextId="quick-start-menu" label="See the interactive menu" />
       </section>
 
-      {/* Panel 2: Interactive menu */}
       <section
         id="quick-start-menu"
         className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
@@ -86,7 +119,6 @@ export default function QuickStart() {
         <ScrollArrow nextId="quick-start-cli" label="See direct commands" />
       </section>
 
-      {/* Panel 3: CLI commands + connect AI agent + hacking */}
       <section
         id="quick-start-cli"
         className="panel relative flex flex-col justify-center border-t border-[var(--border-subtle)] px-6 py-20"
@@ -104,6 +136,9 @@ agenticros up real              # real robot stack
 agenticros up sim-amr           # simulated AMR (Gazebo + RViz)
 agenticros up sim-arm           # simulated 6-DOF arm
 agenticros mode <real|sim>      # swap the active config profile
+agenticros robots list|discover|add   # fleet CRUD + live discovery
+agenticros config show|set|use  # view or edit ~/.agenticros/config.json
+agenticros status / logs        # running components + log tail
 agenticros skills               # list / search / install / discover / add / remove
 agenticros doctor               # coloured health check (includes skills)
 agenticros down                 # stop everything we started`}</code>
@@ -113,16 +148,55 @@ agenticros down                 # stop everything we started`}</code>
           <div className="mt-6">
             <h3 className="text-lg font-medium text-text-primary">4. Connect your AI agent</h3>
             <p className="mt-2 text-sm text-text-secondary">
-              Once a stack is up, point any supported agent at the same robot or sim &mdash; same tools, same memory, your choice of platform:{' '}
-              <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>,{' '}
-              <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>,{' '}
-              <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>,{' '}
-              <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Desktop</a> /{' '}
-              <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a>, or{' '}
-              <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a>. See the{' '}
-              <a href="https://github.com/agenticros/agenticros/blob/main/packages/agenticros-claude-code/README.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude adapter README</a>{' '}and{' '}
-              <a href="https://github.com/agenticros/agenticros/blob/main/packages/agenticros-cli/README.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">agenticros-cli README</a>{' '}for details.
+              Once a stack is up, point any supported agent at the same robot or sim &mdash; same tools, same memory, your choice of platform.
             </p>
+            <div className="mt-4 overflow-hidden rounded-lg border border-[var(--border-subtle)]">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr style={{ background: 'var(--bg-elevated)' }}>
+                    <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">Agent</th>
+                    <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">One-line setup</th>
+                    <th className="border-b border-[var(--border-subtle)] px-4 py-3 text-left font-medium text-text-primary">Doc</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {adapters.map(({ agent, setup, doc }) => (
+                    <tr key={agent} className="border-b border-[var(--border-subtle)] last:border-0">
+                      <td className="px-4 py-3 font-medium text-text-primary">{agent}</td>
+                      <td className="px-4 py-3 text-text-secondary">{setup}</td>
+                      <td className="px-4 py-3">
+                        <a href={doc.href} className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">
+                          {doc.label}
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div
+            className="mt-8 rounded-xl border border-[var(--border-subtle)] p-5"
+            style={{ background: 'var(--surface-card)' }}
+          >
+            <h3 className="font-display text-lg font-medium text-text-primary">Something not working?</h3>
+            <ul className="mt-2 list-disc space-y-2 pl-6 text-sm text-text-secondary">
+              <li>
+                Run <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">agenticros doctor</code> for a coloured health check (skills, transport, ROS build).
+              </li>
+              <li>
+                Robot not moving? See{' '}
+                <a href="https://github.com/agenticros/agenticros/blob/main/docs/robot-not-receiving-cmd-vel.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">cmd_vel troubleshooting</a>{' '}
+                and the{' '}
+                <a href="https://github.com/agenticros/agenticros/blob/main/docs/robot-setup.md#troubleshooting" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">robot setup guide</a>.
+              </li>
+              <li>
+                Claude or Codex denying tool calls? Approve the prompt, or add{' '}
+                <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">mcp__agenticros</code> to your allow list — see the{' '}
+                <a href="https://github.com/agenticros/agenticros/blob/main/packages/agenticros-claude-code/README.md#youre-denying-the-tool-call--robot-doesnt-move" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP adapter README</a>.
+              </li>
+            </ul>
           </div>
 
           <div
@@ -140,7 +214,7 @@ pnpm install && pnpm build
             </pre>
           </div>
         </div>
-        <ScrollArrow nextId="features" label="Continue to Features" />
+        <ScrollArrow nextId="choose-path" label="Choose your path" />
       </section>
     </>
   )

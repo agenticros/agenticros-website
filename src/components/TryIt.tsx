@@ -3,6 +3,8 @@ import ScrollArrow from './ScrollArrow'
 const examples = [
   '"Move forward 1 meter" — publishes velocity to /cmd_vel',
   '"Find the bottle" — Find Object skill: rotates until YOLOv8 spots it',
+  '"Find the chair then drive toward it" — run_mission chains find_object + drive_base',
+  '"Which robots can follow a person?" — ros2_find_robots_for ranks the fleet',
   '"Follow Me" — skill to follow a person (depth + optional VLM)',
   '"Navigate to the kitchen" — sends a Nav2 goal',
   '"What do you see?" — captures a camera frame (real or sim)',
@@ -24,7 +26,7 @@ export default function TryIt() {
           ⟩ Try It
         </h2>
         <p className="mt-4 text-text-secondary">
-          Send a message to your robot (via <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>, <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Desktop</a> / <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a>, <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a>, or any supported agent):
+          Send a message to your robot (via <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>, <a href="https://developers.openai.com/codex/cli/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Codex CLI</a>, <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Desktop</a> / <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a>, <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a>, or any supported agent):
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           {examples.map((example) => (
@@ -38,7 +40,7 @@ export default function TryIt() {
           ))}
         </div>
       </div>
-      <ScrollArrow nextId="skills" label="Continue to Skills" />
+      <ScrollArrow nextId="teleop" label="Continue to Teleop" />
     </section>
   )
 }

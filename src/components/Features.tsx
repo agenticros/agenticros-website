@@ -13,7 +13,7 @@ const features = [
     title: 'Multiple AI agents',
     description: (
       <>
-        Use <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> (terminal <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>), <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Desktop</a> &amp; <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a> (iOS, paired to Mac — same MCP server), <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a>, or other supported agents. One ROS2 core, your choice of adapter — switch or combine as you like.
+        Use <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a>, <a href="https://www.nvidia.com/en-us/ai/nemoclaw" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">NemoClaw</a>, <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> (terminal <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>), <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Desktop</a> &amp; <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a> (iOS, paired to Mac — same MCP server), <a href="https://developers.openai.com/codex/cli/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Codex CLI</a>, <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a>, or other supported agents. One ROS2 core, your choice of adapter — switch or combine as you like.
       </>
     ),
   },
@@ -26,12 +26,25 @@ const features = [
     ),
   },
   {
-    title: 'Natural language from chat apps',
-    description: 'Send commands from WhatsApp, Telegram, Discord, or Slack. Your AI agent translates intent into ROS2 operations.',
+    title: 'Multi-step missions',
+    description: (
+      <>
+        Chain capabilities with <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">run_mission</code> — pass a natural-language goal or a declarative step graph. Skills add verbs; the agent plans and executes. See the{' '}
+        <a href="https://github.com/agenticros/agenticros/blob/main/packages/agenticros-claude-code/README.md#tools" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP adapter README</a>.
+      </>
+    ),
   },
   {
-    title: 'ROS2 tools',
-    description: 'Publish and subscribe to topics, call services, send action goals, get/set parameters, list topics, capture camera snapshots, and TeleOp!',
+    title: 'Fleet-ready',
+    description: (
+      <>
+        Configure multiple robots in <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">~/.agenticros/config.json</code>, manage them with <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">agenticros robots</code>, and route missions with per-robot transport overrides. Tools: <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">ros2_list_robots</code>, <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">ros2_find_robots_for</code>.
+      </>
+    ),
+  },
+  {
+    title: 'Natural language from chat apps',
+    description: 'Send commands from WhatsApp, Telegram, Discord, or Slack. Your AI agent translates intent into ROS2 operations.',
   },
   {
     title: 'Safety',
@@ -49,7 +62,7 @@ const features = [
     title: 'Cross-adapter memory',
     description: (
       <>
-        Optional, off-by-default semantic memory service. When enabled, OpenClaw, Claude Code / Desktop / Dispatch, and Gemini all share a single file-backed store (local JSON or <a href="https://github.com/mem0ai/mem0" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">mem0</a>). Remember a fact from one agent, recall it from any other.
+        Optional, off-by-default semantic memory service. When enabled, OpenClaw, Claude Code / Desktop / Dispatch, Codex CLI, and Gemini all share a single file-backed store (local JSON or <a href="https://github.com/mem0ai/mem0" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">mem0</a>). Remember a fact from one agent, recall it from any other.
       </>
     ),
   },
