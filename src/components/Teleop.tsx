@@ -13,6 +13,17 @@ export default function Teleop() {
         <p className="mt-4 text-text-secondary">
           The OpenClaw plugin ships a browser-based teleop page and a config form — no extra install. Handy for manual driving while you tune your stack or demo the robot to friends.
         </p>
+        <figure className="mt-8 overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-bg-elevated/40 p-3 shadow-2xl shadow-cyan-bright/10">
+          <img
+            src="/teleop.jpg"
+            alt="AgenticROS Teleop in the browser: live camera feed, speed slider, camera topic selector, and directional drive buttons with Connected status"
+            className="h-auto w-full rounded object-contain"
+            loading="lazy"
+          />
+          <figcaption className="mt-3 text-center text-sm text-text-muted">
+            Live camera, speed slider, and on-screen drive controls — plus WASD and Bluetooth gamepads.
+          </figcaption>
+        </figure>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <div
             className="rounded-xl border border-[var(--border-subtle)] p-5"
