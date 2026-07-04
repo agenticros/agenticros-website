@@ -121,6 +121,7 @@ export default function AgentTools() {
             <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Desktop</a> /{' '}
             <a href="https://claude.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Dispatch</a>,{' '}
             <a href="https://developers.openai.com/codex/cli/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Codex CLI</a>,{' '}
+            <a href="https://github.com/NousResearch/hermes-agent" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Hermes Agent</a>,{' '}
             <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a> via{' '}
             <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>, or others) exposes the same tool surface. Skills add verbs to{' '}
             <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">ros2_list_capabilities</code>; agents chain them with{' '}
@@ -149,7 +150,7 @@ export default function AgentTools() {
             ⟩ Agent Tools &mdash; Memory (optional)
           </h2>
           <p className="mt-4 text-text-secondary">
-            When the <a href="#memory" className="text-cyan-bright hover:underline">AI agent memory service</a> is enabled, every adapter — OpenClaw, Claude Code, Claude Desktop / Dispatch, Codex CLI, and Gemini — exposes the same four tools backed by a <strong>shared, file-backed store</strong>. A fact remembered from one adapter is immediately recallable from any other on the same host.
+            When the <a href="#memory" className="text-cyan-bright hover:underline">AI agent memory service</a> is enabled, every adapter — OpenClaw, Claude Code, Claude Desktop / Dispatch, Codex CLI, Hermes Agent, and Gemini — exposes the same four tools backed by a <strong>shared, file-backed store</strong>. A fact remembered from one adapter is immediately recallable from any other on the same host.
           </p>
           <div className="mt-6">
             <ToolTable tools={memoryTools} />

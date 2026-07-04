@@ -10,6 +10,7 @@ const docLinks = [
   { label: 'Cameras', href: 'https://github.com/agenticros/agenticros/blob/main/docs/cameras.md' },
   { label: 'Zenoh', href: 'https://github.com/agenticros/agenticros/blob/main/docs/zenoh-agenticros.md' },
   { label: 'Codex setup', href: 'https://github.com/agenticros/agenticros/blob/main/docs/codex-setup.md' },
+  { label: 'Hermes setup', href: 'https://github.com/agenticros/agenticros/blob/main/docs/hermes-setup.md' },
   { label: 'NemoClaw', href: 'https://github.com/agenticros/agenticros/blob/main/docs/nemoclaw.md' },
   { label: 'cmd_vel troubleshooting', href: 'https://github.com/agenticros/agenticros/blob/main/docs/robot-not-receiving-cmd-vel.md' },
 ]
@@ -54,6 +55,8 @@ export default function Footer() {
           <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a>
           {' + '}
           <a href="https://developers.openai.com/codex/cli/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Codex CLI</a>
+          {' + '}
+          <a href="https://github.com/NousResearch/hermes-agent" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Hermes Agent</a>
           {' + '}
           <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude desktop</a>
           {' / '}
