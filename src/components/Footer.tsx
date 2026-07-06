@@ -9,6 +9,7 @@ const docLinks = [
   { label: 'Teleop', href: 'https://github.com/agenticros/agenticros/blob/main/docs/teleop.md' },
   { label: 'Cameras', href: 'https://github.com/agenticros/agenticros/blob/main/docs/cameras.md' },
   { label: 'Zenoh', href: 'https://github.com/agenticros/agenticros/blob/main/docs/zenoh-agenticros.md' },
+  { label: 'MCP setup', href: 'https://github.com/agenticros/agenticros/blob/main/docs/mcp-setup.md' },
   { label: 'Codex setup', href: 'https://github.com/agenticros/agenticros/blob/main/docs/codex-setup.md' },
   { label: 'Hermes setup', href: 'https://github.com/agenticros/agenticros/blob/main/docs/hermes-setup.md' },
   { label: 'NemoClaw', href: 'https://github.com/agenticros/agenticros/blob/main/docs/nemoclaw.md' },

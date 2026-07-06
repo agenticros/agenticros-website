@@ -10,16 +10,16 @@ const adapters = [
     },
   },
   {
-    agent: 'Claude Code',
-    setup: 'claude mcp add → absolute path to dist/index.js (or .mcp.json in repo)',
+    agent: 'Claude Code / Desktop',
+    setup: 'agenticros mcp setup (or agenticros claude setup) → .mcp.json + Claude Desktop config',
     doc: {
-      label: 'MCP adapter README',
-      href: 'https://github.com/agenticros/agenticros/blob/main/packages/agenticros-claude-code/README.md',
+      label: 'MCP setup guide',
+      href: 'https://github.com/agenticros/agenticros/blob/main/docs/mcp-setup.md',
     },
   },
   {
     agent: 'OpenAI Codex',
-    setup: 'agenticros codex setup → writes ~/.codex/config.toml with absolute MCP path',
+    setup: 'agenticros mcp setup (or agenticros codex setup) → ~/.codex/config.toml with absolute MCP path',
     doc: {
       label: 'Codex setup guide',
       href: 'https://github.com/agenticros/agenticros/blob/main/docs/codex-setup.md',
@@ -27,7 +27,7 @@ const adapters = [
   },
   {
     agent: 'Hermes Agent',
-    setup: 'agenticros hermes setup → writes ~/.hermes/config.yaml; then /reload-mcp in Hermes',
+    setup: 'agenticros mcp setup (or agenticros hermes setup) → ~/.hermes/config.yaml; then /reload-mcp',
     doc: {
       label: 'Hermes setup guide',
       href: 'https://github.com/agenticros/agenticros/blob/main/docs/hermes-setup.md',
@@ -125,7 +125,7 @@ export default function QuickStart() {
   Tail logs`}</code>
           </pre>
           <ul className="mt-4 list-disc space-y-2 pl-6 text-sm text-text-secondary">
-            <li><strong>First-time setup</strong> &mdash; one wizard for workspace deps, ROS 2 build, OpenClaw plugin, Codex and Hermes MCP config, API key, and a final health check. Idempotent &mdash; rerun any time.</li>
+            <li><strong>First-time setup</strong> &mdash; one wizard for workspace deps, ROS 2 build, OpenClaw plugin, MCP clients (Codex, Hermes, Claude), API key, and a final health check. Idempotent &mdash; rerun any time.</li>
             <li><strong>Launch with real robot</strong> &mdash; brings up RealSense + motors + the MCP server.</li>
             <li><strong>Launch with simulation</strong> &mdash; choose between a 2-wheel <strong>AMR</strong> in Gazebo + RViz or a 6-DOF <strong>arm</strong> manipulator (UR5e-shaped, per-joint position control).</li>
             <li><strong>Manage skills</strong> &mdash; <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">create-skill</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">publish</code>, search the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Skills Marketplace</a>, and install with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">skills install owner/skill</code> — plus discover / register local <a href="#skills" className="text-cyan-bright hover:underline">skills</a>.</li>
@@ -147,11 +147,12 @@ export default function QuickStart() {
           <div className="mt-6">
             <h3 className="text-lg font-medium text-text-primary">3. Or skip the menu &mdash; every option has a direct command</h3>
             <pre className="mt-2 overflow-x-auto rounded-lg bg-bg-elevated p-4 font-mono text-sm text-text-primary" style={{ background: 'var(--surface-inset-highlight)' }}>
-              <code>{`npx agenticros init             # one-time workspace + plugin + Codex/Hermes MCP + API key
-agenticros codex setup          # register AgenticROS MCP for OpenAI Codex CLI
-agenticros codex doctor         # validate ~/.codex/config.toml paths
-agenticros hermes setup         # register AgenticROS MCP for Hermes Agent
-agenticros hermes doctor        # validate ~/.hermes/config.yaml paths
+              <code>{`npx agenticros init             # one-time workspace + plugin + MCP clients + API key
+agenticros mcp setup            # register AgenticROS MCP for Codex, Hermes, and Claude
+agenticros mcp doctor           # validate all MCP client configs
+agenticros codex setup          # Codex only (~/.codex/config.toml)
+agenticros hermes setup         # Hermes only (~/.hermes/config.yaml)
+agenticros claude setup         # Claude Code + Desktop (.mcp.json + desktop config)
 agenticros up real              # real robot stack
 agenticros up sim-amr           # simulated AMR (Gazebo + RViz)
 agenticros up sim-arm           # simulated 6-DOF arm
@@ -168,7 +169,7 @@ agenticros down                 # stop everything we started`}</code>
           <div className="mt-6">
             <h3 className="text-lg font-medium text-text-primary">4. Connect your AI agent</h3>
             <p className="mt-2 text-sm text-text-secondary">
-              Once a stack is up, point any supported agent at the same robot or sim &mdash; same tools, same memory, your choice of platform.
+              Once a stack is up, point any supported agent at the same robot or sim &mdash; same tools, same memory, your choice of platform. For MCP clients, run <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">agenticros mcp setup</code> once to configure Codex, Hermes, and Claude together.
             </p>
             <div className="mt-4 overflow-hidden rounded-lg border border-[var(--border-subtle)]">
               <table className="w-full border-collapse text-sm">
@@ -210,6 +211,12 @@ agenticros down                 # stop everything we started`}</code>
                 <a href="https://github.com/agenticros/agenticros/blob/main/docs/robot-not-receiving-cmd-vel.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">cmd_vel troubleshooting</a>{' '}
                 and the{' '}
                 <a href="https://github.com/agenticros/agenticros/blob/main/docs/robot-setup.md#troubleshooting" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">robot setup guide</a>.
+              </li>
+              <li>
+                MCP tools missing in Codex, Hermes, or Claude? Run{' '}
+                <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">agenticros mcp setup</code> then{' '}
+                <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">agenticros mcp doctor</code> — see the{' '}
+                <a href="https://github.com/agenticros/agenticros/blob/main/docs/mcp-setup.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP setup guide</a>.
               </li>
               <li>
                 Claude or Codex denying tool calls? Approve the prompt, or add{' '}
