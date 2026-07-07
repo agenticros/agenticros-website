@@ -7,6 +7,7 @@ const agents = [
   { name: 'Claude Code', href: 'https://claude.com/product/claude-code' },
   { name: 'OpenAI Codex', href: 'https://developers.openai.com/codex/cli/' },
   { name: 'Hermes Agent', href: 'https://github.com/NousResearch/hermes-agent' },
+  { name: 'Ollama (local VLM)', href: 'https://ollama.com/' },
   { name: 'Claude Desktop + Dispatch', href: 'https://claude.com/download' },
   { name: 'Google Gemini', href: 'https://ai.google.dev/gemini-api/docs' },
   { name: 'MCP', href: 'https://modelcontextprotocol.io/docs/getting-started/intro' },

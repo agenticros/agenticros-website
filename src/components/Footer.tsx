@@ -3,6 +3,7 @@ import ScrollArrow from './ScrollArrow'
 const docLinks = [
   { label: 'Documentation', href: 'https://github.com/agenticros/agenticros/tree/main/docs' },
   { label: 'Robot setup', href: 'https://github.com/agenticros/agenticros/blob/main/docs/robot-setup.md' },
+  { label: 'Local VLM (Ollama)', href: 'https://github.com/agenticros/agenticros/blob/main/docs/local-vlm.md' },
   { label: 'CLI reference', href: 'https://github.com/agenticros/agenticros/blob/main/docs/cli.md' },
   { label: 'Skills guide', href: 'https://github.com/agenticros/agenticros/blob/main/docs/skills.md' },
   { label: 'Memory', href: 'https://github.com/agenticros/agenticros/blob/main/docs/memory.md' },

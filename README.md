@@ -1,6 +1,6 @@
 # AgenticROS Website
 
-Marketing site for **AgenticROS** — natural language control of ROS2 robots through messaging apps, with support for **multiple AI agents** including [OpenClaw](https://openclaw.ai/), [Claude Code](https://claude.com/product/claude-code), [OpenAI Codex CLI](https://developers.openai.com/codex/cli/), [Hermes Agent](https://github.com/NousResearch/hermes-agent), [Claude desktop & Dispatch](https://claude.com/download), [Google Gemini](https://ai.google.dev/gemini-api/docs), and [MCP](https://modelcontextprotocol.io/docs/getting-started/intro). Register all MCP clients with `agenticros mcp setup`. Styled to match the OpenClaw look and feel.
+Marketing site for **AgenticROS** — natural language control of ROS2 robots through messaging apps, with support for **multiple AI agents** including [OpenClaw](https://openclaw.ai/), [Claude Code](https://claude.com/product/claude-code), [OpenAI Codex CLI](https://developers.openai.com/codex/cli/), [Hermes Agent](https://github.com/NousResearch/hermes-agent), [Claude desktop & Dispatch](https://claude.com/download), [Google Gemini](https://ai.google.dev/gemini-api/docs), [Ollama](https://ollama.com/) (local VLMs — no cloud API key), and [MCP](https://modelcontextprotocol.io/docs/getting-started/intro). Register all MCP clients with `agenticros mcp setup`. Deep setup: [local-vlm.md](https://github.com/agenticros/agenticros/blob/main/docs/local-vlm.md) in the main repo. Styled to match the OpenClaw look and feel.
 
 ## Run
 

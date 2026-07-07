@@ -49,6 +49,14 @@ const adapters = [
       href: 'https://github.com/agenticros/agenticros/blob/main/docs/nemoclaw.md',
     },
   },
+  {
+    agent: 'Local Ollama VLM',
+    setup: 'ollama pull qwen3-vl:8b-instruct → skip OpenAI in init → point OpenClaw or Hermes at localhost:11434',
+    doc: {
+      label: 'Local VLM guide',
+      href: 'https://github.com/agenticros/agenticros/blob/main/docs/local-vlm.md',
+    },
+  },
 ]
 
 export default function QuickStart() {
@@ -117,7 +125,7 @@ export default function QuickStart() {
 ? What would you like to do?
   Launch with real robot
 ❯ Launch with simulation
-  First-time setup (workspace + OpenClaw plugin + API key)
+  First-time setup (workspace + OpenClaw plugin + optional API key)
   Manage skills (2 registered, 0 available, 0 broken)
   Stop everything
   Doctor (health check)
@@ -125,7 +133,7 @@ export default function QuickStart() {
   Tail logs`}</code>
           </pre>
           <ul className="mt-4 list-disc space-y-2 pl-6 text-sm text-text-secondary">
-            <li><strong>First-time setup</strong> &mdash; one wizard for workspace deps, ROS 2 build, OpenClaw plugin, MCP clients (Codex, Hermes, Claude), API key, and a final health check. Idempotent &mdash; rerun any time.</li>
+            <li><strong>First-time setup</strong> &mdash; one wizard for workspace deps, ROS 2 build, OpenClaw plugin, MCP clients (Codex, Hermes, Claude), optional API key, and a final health check. Idempotent &mdash; rerun any time. Using <a href="https://github.com/agenticros/agenticros/blob/main/docs/local-vlm.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">local Ollama</a>? Skip the OpenAI step.</li>
             <li><strong>Launch with real robot</strong> &mdash; brings up RealSense + motors + the MCP server.</li>
             <li><strong>Launch with simulation</strong> &mdash; choose between a 2-wheel <strong>AMR</strong> in Gazebo + RViz or a 6-DOF <strong>arm</strong> manipulator (UR5e-shaped, per-joint position control).</li>
             <li><strong>Manage skills</strong> &mdash; <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">create-skill</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">publish</code>, search the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Skills Marketplace</a>, and install with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">skills install owner/skill</code> — plus discover / register local <a href="#skills" className="text-cyan-bright hover:underline">skills</a>.</li>
@@ -147,7 +155,7 @@ export default function QuickStart() {
           <div className="mt-6">
             <h3 className="text-lg font-medium text-text-primary">3. Or skip the menu &mdash; every option has a direct command</h3>
             <pre className="mt-2 overflow-x-auto rounded-lg bg-bg-elevated p-4 font-mono text-sm text-text-primary" style={{ background: 'var(--surface-inset-highlight)' }}>
-              <code>{`npx agenticros init             # one-time workspace + plugin + MCP clients + API key
+              <code>{`npx agenticros init             # one-time workspace + plugin + MCP clients (+ optional API key)
 agenticros mcp setup            # register AgenticROS MCP for Codex, Hermes, and Claude
 agenticros mcp doctor           # validate all MCP client configs
 agenticros codex setup          # Codex only (~/.codex/config.toml)

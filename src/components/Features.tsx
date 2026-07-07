@@ -5,7 +5,7 @@ const features = [
     title: 'One-command install',
     description: (
       <>
-        <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-xs text-coral-bright">npx agenticros</code> on any machine with Node &ge; 20. Interactive menu walks you through workspace + plugin + API key, then launches a real robot or a simulator. No <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-xs">git clone</code>, no dependency hunting, idempotent reruns.
+        <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-xs text-coral-bright">npx agenticros</code> on any machine with Node &ge; 20. Interactive menu walks you through workspace + plugin + optional API key, then launches a real robot or a simulator. No <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-xs">git clone</code>, no dependency hunting, idempotent reruns.
       </>
     ),
   },
@@ -64,6 +64,15 @@ const features = [
     description: (
       <>
         Optional, off-by-default semantic memory service. When enabled, OpenClaw, Claude Code / Desktop / Dispatch, Codex CLI, Hermes Agent, and Gemini all share a single file-backed store (local JSON or <a href="https://github.com/mem0ai/mem0" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">mem0</a>). Remember a fact from one agent, recall it from any other.
+      </>
+    ),
+  },
+  {
+    title: 'Local VLM inference',
+    description: (
+      <>
+        Point <a href="https://openclaw.ai/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">OpenClaw</a> or <a href="https://github.com/NousResearch/hermes-agent" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Hermes</a> at a vision-language model on your machine via <a href="https://ollama.com/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Ollama</a> (e.g. <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">qwen3-vl:8b-instruct</code>). Chat, tool calling, and camera description stay on-box &mdash; no OpenAI key.{' '}
+        <a href="https://github.com/agenticros/agenticros/blob/main/docs/local-vlm.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Setup guide →</a>
       </>
     ),
   },

@@ -34,6 +34,23 @@ const paths = [
       external: true,
     },
   },
+  {
+    title: 'Edge / offline',
+    badge: 'Privacy',
+    prereq: 'Ollama on the same machine (or Jetson with NemoClaw). No cloud LLM API key.',
+    command: 'ollama pull qwen3-vl:8b-instruct',
+    description: 'Point OpenClaw or Hermes at a local vision-language model. AgenticROS robot tools, safety clamps, and skills work the same — chat and camera reasoning stay on-box.',
+    cta: {
+      label: 'Local VLM setup guide',
+      href: 'https://github.com/agenticros/agenticros/blob/main/docs/local-vlm.md',
+      external: true,
+    },
+    cta2: {
+      label: 'NemoClaw on Jetson',
+      href: 'https://github.com/agenticros/agenticros/blob/main/docs/nemoclaw.md',
+      external: true,
+    },
+  },
 ]
 
 export default function ChoosePath() {
@@ -51,7 +68,7 @@ export default function ChoosePath() {
           Pick the path that matches your setup — you can switch later with{' '}
           <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">agenticros mode</code>.
         </p>
-        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {paths.map(({ title, badge, prereq, command, description, cta, cta2 }) => (
             <div
               key={title}
