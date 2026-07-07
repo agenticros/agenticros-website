@@ -29,8 +29,9 @@ const features = [
     title: 'Multi-step missions',
     description: (
       <>
-        Chain capabilities with <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">run_mission</code> — pass a natural-language goal or a declarative step graph. Skills add verbs; the agent plans and executes. See the{' '}
-        <a href="https://github.com/agenticros/agenticros/blob/main/packages/agenticros-claude-code/README.md#tools" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP adapter README</a>.
+        Chain capabilities with <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">run_mission</code> — pass a natural-language goal or a declarative step graph. Skills add verbs; the agent plans and executes. See{' '}
+        <a href="#missions" className="text-cyan-bright hover:underline">Missions &amp; orchestration</a> and the{' '}
+        <a href="https://github.com/agenticros/agenticros/blob/main/docs/missions.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">missions guide</a>.
       </>
     ),
   },
@@ -99,7 +100,7 @@ export default function Features() {
           ))}
         </div>
       </div>
-      <ScrollArrow nextId="agent-tools" label="Continue to Agent Tools" />
+      <ScrollArrow nextId="missions" label="Missions & orchestration" />
     </section>
   )
 }

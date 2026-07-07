@@ -5,6 +5,7 @@ import HowItWorks from './components/HowItWorks'
 import QuickStart from './components/QuickStart'
 import ChoosePath from './components/ChoosePath'
 import Features from './components/Features'
+import Missions from './components/Missions'
 import Teleop from './components/Teleop'
 import AgentTools from './components/AgentTools'
 import DeploymentModes from './components/DeploymentModes'
@@ -27,6 +28,7 @@ function App() {
         <QuickStart />
         <ChoosePath />
         <Features />
+        <Missions />
         <AgentTools />
         <DeploymentModes />
         <Simulation />

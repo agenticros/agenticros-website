@@ -3,6 +3,7 @@ export default function Header() {
     { href: '#how-it-works', label: 'How it works' },
     { href: '#quick-start', label: 'Quick Start' },
     { href: '#features', label: 'Features' },
+    { href: '#missions', label: 'Missions' },
     { href: '#agent-tools', label: 'Agent Tools' },
     { href: '#deployment', label: 'Deployment' },
     { href: '#simulation', label: 'Simulation' },
