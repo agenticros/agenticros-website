@@ -79,7 +79,8 @@ const referenceSkills = [
         Trigger RTAB-Map (or compatible) mapping via ROS services —{' '}
         <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">start_slam</code>,{' '}
         <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">stop_slam</code>,{' '}
-        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">save_map</code>.
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">save_map</code>,{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">load_map</code>.
       </>
     ),
   },
@@ -96,6 +97,51 @@ const referenceSkills = [
       </>
     ),
   },
+  {
+    title: 'Navigate Through Poses',
+    marketplaceRef: 'chrismatthieu/navigate-through-poses',
+    pkg: '@agenticros/navigate-through-poses',
+    marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/navigate-through-poses',
+    githubHref: 'https://github.com/agenticros/agenticros-skill-navigate-through-poses',
+    description: (
+      <>
+        Nav2{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">NavigateThroughPoses</code>{' '}
+        waypoint routes — pass a{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">poses</code>{' '}
+        array or an explicit action goal.
+      </>
+    ),
+  },
+  {
+    title: 'MoveIt Pick',
+    marketplaceRef: 'chrismatthieu/moveit-pick',
+    pkg: '@agenticros/moveit-pick',
+    marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/moveit-pick',
+    githubHref: 'https://github.com/agenticros/agenticros-skill-moveit-pick',
+    description: (
+      <>
+        Operator-bringup MoveIt{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">pick_object</code>{' '}
+        via <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">MoveGroup</code>. Bring up your MoveIt stack; pass an explicit goal until helpers land.
+      </>
+    ),
+  },
+  {
+    title: 'Dock to Charger',
+    marketplaceRef: 'chrismatthieu/dock-to-charger',
+    pkg: '@agenticros/dock-to-charger',
+    marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/dock-to-charger',
+    githubHref: 'https://github.com/agenticros/agenticros-skill-dock-to-charger',
+    description: (
+      <>
+        OpenNav docking —{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">dock_to_charger</code>{' '}
+        with <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">dock_id</code>{' '}
+        or an explicit DockRobot goal. Operator must run the docking stack.
+      </>
+    ),
+  },
 ]
 
 const cliCommands = [
@@ -103,7 +149,7 @@ const cliCommands = [
   { cmd: 'agenticros skills dev [--invoke <tool>]', desc: 'load the skill locally without restarting OpenClaw' },
   { cmd: 'agenticros publish [--graduate]', desc: 'validate, push to GitHub, and submit to skills.agenticros.com' },
   { cmd: 'agenticros skills search <q>', desc: <>search the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">marketplace</a> by keyword (e.g. <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">follow</code>)</> },
-  { cmd: 'agenticros skills install <owner/skill>', desc: 'clone + build, warm ~/.agenticros/skills-cache/, write skillRefs, register with OpenClaw, sync tools allowlist' },
+  { cmd: 'agenticros skills install <@agenticros/pkg|owner/skill>', desc: 'prefer npm pack into ~/.agenticros/skills-cache/, else clone + build; write skillRefs, register, sync tools, auto-restart gateway (--no-restart to skip)' },
   { cmd: 'agenticros skills', desc: 'list registered skills + cloned-but-unregistered candidates on disk' },
   { cmd: 'agenticros skills discover', desc: 'interactive picker over local clones the CLI found' },
   { cmd: 'agenticros skills add <path-or-name>', desc: 'register a local clone (path) or npm package without the marketplace' },

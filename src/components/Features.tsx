@@ -49,9 +49,12 @@ const features = [
       <>
         Keep Nav2, MoveIt, or your perception stack. Declare an <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">external_ros_node</code> capability and agents call it by name. Seed catalog:{' '}
         <a href="https://github.com/agenticros/agenticros-skill-navigate-to" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">navigate-to</a>,{' '}
+        <a href="https://github.com/agenticros/agenticros-skill-navigate-through-poses" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">navigate-through-poses</a>,{' '}
         <a href="https://github.com/agenticros/agenticros-skill-detect-humans" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">detect-humans</a>,{' '}
         <a href="https://github.com/agenticros/agenticros-skill-start-slam" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">start-slam</a>,{' '}
-        <a href="https://github.com/agenticros/agenticros-skill-follow-me-ros" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">follow-me-ros</a>.
+        <a href="https://github.com/agenticros/agenticros-skill-follow-me-ros" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">follow-me-ros</a>,{' '}
+        <a href="https://github.com/agenticros/agenticros-skill-moveit-pick" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">moveit-pick</a>,{' '}
+        <a href="https://github.com/agenticros/agenticros-skill-dock-to-charger" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">dock-to-charger</a>.
       </>
     ),
   },
