@@ -36,6 +36,24 @@ const referenceSkills = [
       </>
     ),
   },
+  {
+    title: 'Navigate To (Nav2)',
+    marketplaceRef: null,
+    pkg: 'examples/navigate-to',
+    marketplaceHref: 'https://github.com/agenticros/agenticros/tree/main/examples/navigate-to',
+    githubHref: 'https://github.com/agenticros/agenticros/tree/main/examples/navigate-to',
+    description: (
+      <>
+        Seed skill that wraps Nav2&apos;s{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">NavigateToPose</code>{' '}
+        as an <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">external_ros_node</code>{' '}
+        capability. Keep your navigation stack; agents call{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">navigate_to</code>{' '}
+        by name inside <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">run_mission</code>.
+        Template for any action/service/topic you already trust.
+      </>
+    ),
+  },
 ]
 
 const cliCommands = [
@@ -64,7 +82,7 @@ export default function Skills() {
             ⟩ Skills
           </h2>
           <p className="mt-3 text-text-secondary">
-            AgenticROS <strong>skills</strong> are optional packages that add tools and behaviors to the OpenClaw plugin (e.g. <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">find_object</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">follow_person</code>). Each skill registers its own tools and reads its config from <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">config.skills.&lt;skillId&gt;</code>. Declared <strong>capabilities</strong> surface in <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">ros2_list_capabilities</code> and chain in <a href="#missions" className="text-cyan-bright hover:underline">run_mission</a> without a per-skill MCP tool on OpenClaw.
+            AgenticROS <strong>skills</strong> are optional packages that add tools and behaviors (e.g. <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">find_object</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">follow_person</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">navigate_to</code>). Each skill registers its own tools and reads its config from <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">config.skills.&lt;skillId&gt;</code>. Declared <strong>capabilities</strong> feed a shared mission-binding table in <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">@agenticros/core</code> — they surface in <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">ros2_list_capabilities</code> and chain in <a href="#missions" className="text-cyan-bright hover:underline">run_mission</a> on OpenClaw, MCP, and Gemini without a core PR per adapter. Skills can also wrap existing ROS nodes via <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">external_ros_node</code>.
           </p>
           <p className="mt-3 text-text-secondary">
             <strong>Create</strong> with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">npx agenticros create-skill</code>, <strong>publish</strong> with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">npx agenticros publish</code>, and <strong>install</strong> from the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">AgenticROS Skills Marketplace</a> using namespaced refs like <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">owner/skill-id</code>.
@@ -81,9 +99,9 @@ export default function Skills() {
           </div>
 
           <p className="mt-6 text-xs uppercase tracking-wider text-text-muted">
-            Featured on the marketplace
+            Featured skills &amp; examples
           </p>
-          <div className="mt-2 grid gap-4 sm:grid-cols-2">
+          <div className="mt-2 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {referenceSkills.map(({ title, marketplaceRef, pkg, marketplaceHref, githubHref, description }) => (
               <div
                 key={pkg}
@@ -106,7 +124,7 @@ export default function Skills() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      View on marketplace
+                      {marketplaceRef ? 'View on marketplace' : 'View example'}
                     </a>
                     <span className="text-text-muted">·</span>
                     <a
@@ -120,13 +138,23 @@ export default function Skills() {
                   </div>
                 </div>
                 <p className="text-sm text-text-secondary">{description}</p>
-                <code
-                  className="mt-auto block overflow-x-auto rounded-md px-3 py-2 font-mono text-xs text-text-primary"
-                  style={{ background: 'var(--surface-inset-highlight)' }}
-                >
-                  <span className="select-none text-coral-bright">$</span>{' '}
-                  npx agenticros skills install {marketplaceRef}
-                </code>
+                {marketplaceRef ? (
+                  <code
+                    className="mt-auto block overflow-x-auto rounded-md px-3 py-2 font-mono text-xs text-text-primary"
+                    style={{ background: 'var(--surface-inset-highlight)' }}
+                  >
+                    <span className="select-none text-coral-bright">$</span>{' '}
+                    npx agenticros skills install {marketplaceRef}
+                  </code>
+                ) : (
+                  <code
+                    className="mt-auto block overflow-x-auto rounded-md px-3 py-2 font-mono text-xs text-text-primary"
+                    style={{ background: 'var(--surface-inset-highlight)' }}
+                  >
+                    <span className="select-none text-coral-bright">→</span>{' '}
+                    examples/navigate-to
+                  </code>
+                )}
               </div>
             ))}
           </div>
@@ -167,7 +195,8 @@ export default function Skills() {
           </div>
 
           <p className="mt-6 text-sm text-text-muted">
-            The <a href="https://claude.com/product/claude-code" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude Code</a> MCP adapter exposes the Find Object skill as the built-in <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">ros2_find_object</code> tool &mdash; no skill install required on that adapter.
+            The MCP and Gemini adapters expose Find Object / Follow Me as built-in tools (
+            <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">ros2_find_object</code>, follow-person) so the find→approach mission runs without a separate skill install on those hosts. On OpenClaw, install from the marketplace.
           </p>
         </div>
         <ScrollArrow nextId="skills-runbook" label="Skills runbook" />

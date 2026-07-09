@@ -29,7 +29,7 @@ const features = [
     title: 'Multi-step missions',
     description: (
       <>
-        Chain capabilities with <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">run_mission</code> — pass a natural-language goal or a declarative step graph. Skills add verbs; the agent plans and executes. See{' '}
+        Chain capabilities with <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">run_mission</code> — natural-language goal or declarative step graph. Pause, resume, or cancel mid-flight; step transcripts land in shared memory for cross-agent handoff. See{' '}
         <a href="#missions" className="text-cyan-bright hover:underline">Missions &amp; orchestration</a> and the{' '}
         <a href="https://github.com/agenticros/agenticros/blob/main/docs/missions.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">missions guide</a>.
       </>
@@ -39,7 +39,16 @@ const features = [
     title: 'Fleet-ready',
     description: (
       <>
-        Configure multiple robots in <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">~/.agenticros/config.json</code>, manage them with <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">agenticros robots</code>, and route missions with per-robot transport overrides. Tools: <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">ros2_list_robots</code>, <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">ros2_find_robots_for</code>.
+        Check robots into <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">~/.agenticros/fleet.json</code> (wins over config). Online status from the <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs">robot_info</code> heartbeat. Filter with <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">ros2_find_robots_for</code> — capability, kind, and online.
+      </>
+    ),
+  },
+  {
+    title: 'External ROS nodes as skills',
+    description: (
+      <>
+        Keep Nav2, MoveIt, or your perception stack. Declare an <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">external_ros_node</code> capability and agents call it by name. Reference: the{' '}
+        <a href="https://github.com/agenticros/agenticros/tree/main/examples/navigate-to" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">navigate_to</a> Nav2 seed skill.
       </>
     ),
   },

@@ -10,7 +10,7 @@ const toolGroups: { heading: string; tools: Tool[] }[] = [
       {
         name: 'ros2_list_capabilities',
         description:
-          'Typed verb manifest — built-in capabilities plus skill-declared verbs (find_object, follow_person, …). The planning surface for agents.',
+          'Typed verb manifest — built-ins, skill-declared verbs, and external_ros_node capabilities (find_object, navigate_to, …). The planning surface for agents.',
       },
     ],
   },
@@ -19,16 +19,18 @@ const toolGroups: { heading: string; tools: Tool[] }[] = [
     tools: [
       {
         name: 'ros2_list_robots',
-        description: 'List configured robots — id, name, kind, capabilities, online status',
+        description:
+          'List robots from fleet.json / config — id, kind, capabilities, online status from robot_info heartbeat (5s staleness; cmd_vel fallback)',
       },
       {
         name: 'ros2_discover_robots',
-        description: 'Scan for /<ns>/cmd_vel namespaces and classify reachability against config',
+        description:
+          'Scan robot_info + cmd_vel namespaces and classify reachability against fleet config',
       },
       {
         name: 'ros2_find_robots_for',
         description:
-          'Ranked filter by capability + kind + online — e.g. "which robot can follow a person right now?"',
+          'Ranked filter by capability + kind + online — e.g. "which AMR with RealSense can follow a person right now?"',
       },
     ],
   },
@@ -41,8 +43,16 @@ const toolGroups: { heading: string; tools: Tool[] }[] = [
           'Execute a multi-step mission or compile a natural-language goal into one. Chain capabilities via {{stepId.outputs.field}} template refs; returns a mission_id',
       },
       {
+        name: 'mission_pause',
+        description: 'Hold an in-flight mission before the next step (reason optional)',
+      },
+      {
+        name: 'mission_resume',
+        description: 'Continue a paused mission from the next pending step',
+      },
+      {
         name: 'mission_cancel',
-        description: 'Cancel an in-flight mission by mission_id at the next step boundary',
+        description: 'Cancel an in-flight (or paused) mission by mission_id at the next step boundary',
       },
     ],
   },
@@ -125,7 +135,9 @@ export default function AgentTools() {
             <a href="https://ai.google.dev/gemini-api/docs" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Google Gemini</a> via{' '}
             <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>, or others) exposes the same tool surface. Skills add verbs to{' '}
             <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">ros2_list_capabilities</code>; agents chain them with{' '}
-            <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">run_mission</code> — no per-skill MCP tool required on OpenClaw.
+            <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">run_mission</code> and can{' '}
+            <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">mission_pause</code> /{' '}
+            <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">mission_resume</code> mid-flight.
           </p>
           <div className="mt-8 space-y-8">
             {toolGroups.map(({ heading, tools }) => (
