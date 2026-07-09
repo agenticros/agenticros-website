@@ -70,7 +70,8 @@ export default function Missions() {
           AgenticROS puts a <strong>contract layer</strong> between agent reasoning and ROS 2 execution.
           Agents plan in named <strong>capabilities</strong>, not raw topics. The platform validates against
           typed manifests, compiles multi-step <strong>missions</strong>, and only then dispatches to the wire —
-          with safety clamps, fleet filters, and pause/resume applied first.
+          with safety clamps, fleet filters, pause/resume, step retries, and
+          mid-step cancel for interruptible skills applied first.
         </p>
 
         <div
