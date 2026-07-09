@@ -93,9 +93,11 @@ export default function Missions() {
           returns the planning surface: <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs">drive_base</code>,{' '}
           <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs">find_object</code>,{' '}
           <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs">follow_person</code>,{' '}
-          <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs">navigate_to</code>, plus whatever{' '}
+          <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs">navigate_to</code>,{' '}
+          <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs">detect_humans</code>,{' '}
+          <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs">start_slam</code>, plus whatever{' '}
           <a href="#skills" className="text-cyan-bright hover:underline">skills</a> you install — including{' '}
-          <strong>external ROS nodes</strong> (Nav2, MoveIt, YOLO, …) declared as capability manifests.
+          <strong>external ROS nodes</strong> and <strong>discoverable</strong> marketplace verbs not yet installed.
           Agents reason about verbs, not raw topic names.
         </p>
 
@@ -195,13 +197,13 @@ export default function Missions() {
             Full missions guide →
           </a>
           <a
-            href="https://github.com/agenticros/agenticros/blob/main/docs/blog/phase-1-complete.md"
+            href="https://github.com/agenticros/agenticros/blob/main/docs/blog/seed-catalog-and-skillrefs.md"
             className="inline-flex items-center rounded-lg border border-[var(--border-subtle)] px-4 py-2 text-sm font-medium text-text-primary transition hover:bg-bg-elevated"
             style={{ background: 'var(--surface-card)' }}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Phase 1 announcement
+            Seed catalog &amp; skillRefs
           </a>
           <a
             href="https://github.com/agenticros/agenticros/blob/main/examples/find-and-approach/README.md"

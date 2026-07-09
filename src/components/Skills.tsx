@@ -38,19 +38,61 @@ const referenceSkills = [
   },
   {
     title: 'Navigate To (Nav2)',
-    marketplaceRef: null,
-    pkg: 'examples/navigate-to',
-    marketplaceHref: 'https://github.com/agenticros/agenticros/tree/main/examples/navigate-to',
-    githubHref: 'https://github.com/agenticros/agenticros/tree/main/examples/navigate-to',
+    marketplaceRef: 'chrismatthieu/navigate-to',
+    pkg: 'agenticros-skill-navigate-to',
+    marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/navigate-to',
+    githubHref: 'https://github.com/agenticros/agenticros-skill-navigate-to',
     description: (
       <>
-        Seed skill that wraps Nav2&apos;s{' '}
+        Wraps Nav2&apos;s{' '}
         <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">NavigateToPose</code>{' '}
         as an <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">external_ros_node</code>{' '}
         capability. Keep your navigation stack; agents call{' '}
         <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">navigate_to</code>{' '}
-        by name inside <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">run_mission</code>.
-        Template for any action/service/topic you already trust.
+        inside <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">run_mission</code>.
+      </>
+    ),
+  },
+  {
+    title: 'Detect Humans',
+    marketplaceRef: 'chrismatthieu/detect-humans',
+    pkg: 'agenticros-skill-detect-humans',
+    marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/detect-humans',
+    githubHref: 'https://github.com/agenticros/agenticros-skill-detect-humans',
+    description: (
+      <>
+        Subscribe once to your on-robot vision stack&apos;s{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">Detection2DArray</code>{' '}
+        topic. Perception stays on the robot — unlike in-process{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">find_object</code>.
+      </>
+    ),
+  },
+  {
+    title: 'Start SLAM',
+    marketplaceRef: 'chrismatthieu/start-slam',
+    pkg: 'agenticros-skill-start-slam',
+    marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/start-slam',
+    githubHref: 'https://github.com/agenticros/agenticros-skill-start-slam',
+    description: (
+      <>
+        Trigger RTAB-Map (or compatible) mapping via ROS services —{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">start_slam</code>,{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">stop_slam</code>,{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">save_map</code>.
+      </>
+    ),
+  },
+  {
+    title: 'Follow Me (ROS)',
+    marketplaceRef: 'chrismatthieu/follow-me-ros',
+    pkg: 'agenticros-skill-follow-me-ros',
+    marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/follow-me-ros',
+    githubHref: 'https://github.com/agenticros/agenticros-skill-follow-me-ros',
+    description: (
+      <>
+        Call the on-robot <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">agenticros_follow_me</code>{' '}
+        services from a mission — MediaPipe on the robot, not the in-gateway YOLO loop.
       </>
     ),
   },
@@ -61,7 +103,7 @@ const cliCommands = [
   { cmd: 'agenticros skills dev [--invoke <tool>]', desc: 'load the skill locally without restarting OpenClaw' },
   { cmd: 'agenticros publish [--graduate]', desc: 'validate, push to GitHub, and submit to skills.agenticros.com' },
   { cmd: 'agenticros skills search <q>', desc: <>search the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">marketplace</a> by keyword (e.g. <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">follow</code>)</> },
-  { cmd: 'agenticros skills install <owner/skill>', desc: 'clone the GitHub repo, build it, register it with OpenClaw, and sync the tools allowlist — one step' },
+  { cmd: 'agenticros skills install <owner/skill>', desc: 'clone + build, warm ~/.agenticros/skills-cache/, write skillRefs, register with OpenClaw, sync tools allowlist' },
   { cmd: 'agenticros skills', desc: 'list registered skills + cloned-but-unregistered candidates on disk' },
   { cmd: 'agenticros skills discover', desc: 'interactive picker over local clones the CLI found' },
   { cmd: 'agenticros skills add <path-or-name>', desc: 'register a local clone (path) or npm package without the marketplace' },
@@ -82,10 +124,10 @@ export default function Skills() {
             ⟩ Skills
           </h2>
           <p className="mt-3 text-text-secondary">
-            AgenticROS <strong>skills</strong> are optional packages that add tools and behaviors (e.g. <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">find_object</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">follow_person</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">navigate_to</code>). Each skill registers its own tools and reads its config from <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">config.skills.&lt;skillId&gt;</code>. Declared <strong>capabilities</strong> feed a shared mission-binding table in <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">@agenticros/core</code> — they surface in <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">ros2_list_capabilities</code> and chain in <a href="#missions" className="text-cyan-bright hover:underline">run_mission</a> on OpenClaw, MCP, and Gemini without a core PR per adapter. Skills can also wrap existing ROS nodes via <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">external_ros_node</code>.
+            AgenticROS <strong>skills</strong> are optional packages that add tools and behaviors (e.g. <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">find_object</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">follow_person</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">navigate_to</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">detect_humans</code>). Each skill registers its own tools and reads runtime config from <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">config.skills.&lt;skillId&gt;</code>. Pin marketplace installs with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">skillRefs</code> — auto-fetched into <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">~/.agenticros/skills-cache/</code>. Declared <strong>capabilities</strong> feed a shared mission-binding table in <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">@agenticros/core</code> — they surface in <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">ros2_list_capabilities</code> (including <em>discoverable</em> marketplace verbs you have not installed yet) and chain in <a href="#missions" className="text-cyan-bright hover:underline">run_mission</a> on OpenClaw, MCP, and Gemini. Skills can also wrap existing ROS nodes via <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">external_ros_node</code>.
           </p>
           <p className="mt-3 text-text-secondary">
-            <strong>Create</strong> with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">npx agenticros create-skill</code>, <strong>publish</strong> with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">npx agenticros publish</code>, and <strong>install</strong> from the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">AgenticROS Skills Marketplace</a> using namespaced refs like <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">owner/skill-id</code>.
+            <strong>Create</strong> with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">npx agenticros create-skill</code>, <strong>publish</strong> with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">npx agenticros publish</code>, and <strong>install</strong> from the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">AgenticROS Skills Marketplace</a> using namespaced refs like <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">chrismatthieu/navigate-to</code>.
           </p>
           <div className="mt-4">
             <a

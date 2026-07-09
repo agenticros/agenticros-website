@@ -47,8 +47,27 @@ const features = [
     title: 'External ROS nodes as skills',
     description: (
       <>
-        Keep Nav2, MoveIt, or your perception stack. Declare an <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">external_ros_node</code> capability and agents call it by name. Reference: the{' '}
-        <a href="https://github.com/agenticros/agenticros/tree/main/examples/navigate-to" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">navigate_to</a> Nav2 seed skill.
+        Keep Nav2, MoveIt, or your perception stack. Declare an <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">external_ros_node</code> capability and agents call it by name. Seed catalog:{' '}
+        <a href="https://github.com/agenticros/agenticros-skill-navigate-to" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">navigate-to</a>,{' '}
+        <a href="https://github.com/agenticros/agenticros-skill-detect-humans" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">detect-humans</a>,{' '}
+        <a href="https://github.com/agenticros/agenticros-skill-start-slam" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">start-slam</a>,{' '}
+        <a href="https://github.com/agenticros/agenticros-skill-follow-me-ros" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">follow-me-ros</a>.
+      </>
+    ),
+  },
+  {
+    title: 'Declarative skillRefs',
+    description: (
+      <>
+        Pin marketplace skills in config with <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">skillRefs</code>. On startup AgenticROS resolves them into <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">~/.agenticros/skills-cache/</code> — no more manual clone / build / wire dance. Never auto-upgrades pins.
+      </>
+    ),
+  },
+  {
+    title: 'Discoverable capabilities',
+    description: (
+      <>
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">ros2_list_capabilities</code> surfaces marketplace verbs you have not installed yet (<code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs">discoverable: true</code> + <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs">install_ref</code>) so agents can propose an install mid-conversation.
       </>
     ),
   },
