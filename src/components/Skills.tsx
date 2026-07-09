@@ -4,7 +4,7 @@ const referenceSkills = [
   {
     title: 'Find Object',
     marketplaceRef: 'chrismatthieu/find',
-    pkg: '@agenticros-skills/find',
+    pkg: '@agenticros/find',
     marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/find',
     githubHref: 'https://github.com/agenticros/agenticros-skill-find',
     description: (
@@ -25,7 +25,7 @@ const referenceSkills = [
   {
     title: 'Follow Me',
     marketplaceRef: 'chrismatthieu/followme',
-    pkg: '@agenticros-skills/followme',
+    pkg: '@agenticros/followme',
     marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/followme',
     githubHref: 'https://github.com/agenticros/agenticros-skill-followme',
     description: (
@@ -39,7 +39,7 @@ const referenceSkills = [
   {
     title: 'Navigate To (Nav2)',
     marketplaceRef: 'chrismatthieu/navigate-to',
-    pkg: '@agenticros-skills/navigate-to',
+    pkg: '@agenticros/navigate-to',
     marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/navigate-to',
     githubHref: 'https://github.com/agenticros/agenticros-skill-navigate-to',
     description: (
@@ -56,7 +56,7 @@ const referenceSkills = [
   {
     title: 'Detect Humans',
     marketplaceRef: 'chrismatthieu/detect-humans',
-    pkg: '@agenticros-skills/detect-humans',
+    pkg: '@agenticros/detect-humans',
     marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/detect-humans',
     githubHref: 'https://github.com/agenticros/agenticros-skill-detect-humans',
     description: (
@@ -71,7 +71,7 @@ const referenceSkills = [
   {
     title: 'Start SLAM',
     marketplaceRef: 'chrismatthieu/start-slam',
-    pkg: '@agenticros-skills/start-slam',
+    pkg: '@agenticros/start-slam',
     marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/start-slam',
     githubHref: 'https://github.com/agenticros/agenticros-skill-start-slam',
     description: (
@@ -86,7 +86,7 @@ const referenceSkills = [
   {
     title: 'Follow Me (ROS)',
     marketplaceRef: 'chrismatthieu/follow-me-ros',
-    pkg: '@agenticros-skills/follow-me-ros',
+    pkg: '@agenticros/follow-me-ros',
     marketplaceHref: 'https://skills.agenticros.com/chrismatthieu/follow-me-ros',
     githubHref: 'https://github.com/agenticros/agenticros-skill-follow-me-ros',
     description: (
