@@ -21,7 +21,7 @@ const features = [
     title: 'Real robots & simulation',
     description: (
       <>
-        Drive a real ROS 2 robot, or boot a built-in <strong>Gazebo</strong> simulator &mdash; a 2-wheel <strong>AMR</strong> (RGBD + lidar + IMU) or a 6-DOF <strong>arm</strong> manipulator. Topic names match the real-robot plugin so the same skill code, MCP calls, and chat commands work in both. <a href="#simulation" className="text-cyan-bright hover:underline">Learn more →</a>
+        Drive a real ROS 2 robot, or boot a built-in <strong>Gazebo</strong> simulator &mdash; a 2-wheel <strong>AMR</strong> (RGBD + lidar + IMU; optional <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">--nav2</code> for Nav2) or a 6-DOF <strong>arm</strong> manipulator. Topic names match the real-robot plugin so the same skill code, MCP calls, and chat commands work in both. <a href="#simulation" className="text-cyan-bright hover:underline">Learn more →</a>
       </>
     ),
   },

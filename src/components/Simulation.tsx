@@ -5,21 +5,22 @@ const robots = [
     id: 'AMR',
     name: '2-wheel AMR',
     summary:
-      'Diff-drive autonomous mobile robot with a front-facing depth camera (RGBD), 360° lidar, and IMU. Drops into a 12 × 12 m indoor world with obstacles and a person target for follow-me demos.',
+      'Diff-drive autonomous mobile robot with a front-facing depth camera (RGBD), 360° lidar, and IMU. Drops into a 12 × 12 m indoor world with obstacles and a person target for follow-me demos. Add --nav2 for map + AMCL + Nav2 so navigate_to missions work out of the box.',
     specs: [
       { label: 'Drive', value: 'Differential, 0.36 m wheelbase' },
       { label: 'Front camera', value: 'D435-like RGBD, 640×480 @ 30 Hz, 87° HFOV' },
       { label: 'LIDAR', value: '360 samples @ 12 Hz, 12 m range' },
       { label: 'IMU', value: '100 Hz with mild gaussian noise' },
+      { label: 'Nav2', value: 'agenticros up sim-amr --nav2 → map + AMCL + navigate_to_pose' },
       { label: 'Topics', value: '/cmd_vel, /odom, /scan, /imu/data, /camera/* — same names as a real RealSense robot' },
     ],
-    command: 'agenticros up sim-amr',
+    command: 'agenticros up sim-amr --nav2',
   },
   {
     id: 'ARM',
     name: '6-DOF arm manipulator',
     summary:
-      'UR5e-shaped 6-DOF arm with per-joint position control. Drive every joint from a Float64 topic — same interface from the CLI, an MCP ros2_publish, or any other ROS 2 client.',
+      'UR5e-shaped 6-DOF arm with per-joint position control. Drive every joint from a Float64 topic — same interface from the CLI, an MCP ros2_publish, or any other ROS 2 client. MoveIt2 on sim-arm is still WIP.',
     specs: [
       { label: 'Joints', value: '6 (shoulder pan/lift, elbow, wrist 1/2/3)' },
       { label: 'Control', value: 'Per-joint position (PD controller in Gazebo)' },
@@ -45,7 +46,11 @@ export default function Simulation() {
           </h2>
           <p className="mt-4 text-text-secondary">
             AgenticROS ships <strong>Gazebo Harmonic</strong> simulation assets out of the box &mdash; an
-            indoor world, a 2-wheel <strong>AMR</strong>, a 6-DOF <strong>arm manipulator</strong>, and a{' '}
+            indoor world, a 2-wheel <strong>AMR</strong> (optional <strong>Nav2</strong> via{' '}
+            <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">
+              --nav2
+            </code>
+            ), a 6-DOF <strong>arm manipulator</strong>, and a{' '}
             <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">
               ros_gz_bridge
             </code>{' '}

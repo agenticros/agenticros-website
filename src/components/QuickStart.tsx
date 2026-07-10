@@ -135,7 +135,7 @@ export default function QuickStart() {
           <ul className="mt-4 list-disc space-y-2 pl-6 text-sm text-text-secondary">
             <li><strong>First-time setup</strong> &mdash; one wizard for workspace deps, ROS 2 build, OpenClaw plugin, MCP clients (Codex, Hermes, Claude), optional API key, and a final health check. Idempotent &mdash; rerun any time. Using <a href="https://github.com/agenticros/agenticros/blob/main/docs/local-vlm.md" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">local Ollama</a>? Skip the OpenAI step.</li>
             <li><strong>Launch with real robot</strong> &mdash; brings up RealSense + motors + the MCP server.</li>
-            <li><strong>Launch with simulation</strong> &mdash; choose between a 2-wheel <strong>AMR</strong> in Gazebo + RViz or a 6-DOF <strong>arm</strong> manipulator (UR5e-shaped, per-joint position control).</li>
+            <li><strong>Launch with simulation</strong> &mdash; choose between a 2-wheel <strong>AMR</strong> in Gazebo + RViz (add <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">--nav2</code> for Nav2) or a 6-DOF <strong>arm</strong> manipulator (UR5e-shaped, per-joint position control).</li>
             <li><strong>Manage skills</strong> &mdash; <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">create-skill</code>, <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">publish</code>, search the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Skills Marketplace</a>, and install with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">skills install owner/skill</code> — plus discover / register local <a href="#skills" className="text-cyan-bright hover:underline">skills</a>.</li>
             <li><strong>Stop everything</strong> &mdash; cleanly tears down whatever the CLI spawned (pidfiles + logs under <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm">/tmp/agenticros-*</code>).</li>
           </ul>
@@ -163,6 +163,7 @@ agenticros hermes setup         # Hermes only (~/.hermes/config.yaml)
 agenticros claude setup         # Claude Code + Desktop (.mcp.json + desktop config)
 agenticros up real              # real robot stack
 agenticros up sim-amr           # simulated AMR (Gazebo + RViz)
+agenticros up sim-amr --nav2    # AMR + Nav2 for navigate_to
 agenticros up sim-arm           # simulated 6-DOF arm
 agenticros mode <real|sim>      # swap the active config profile
 agenticros robots list|discover|add   # fleet CRUD + live discovery
