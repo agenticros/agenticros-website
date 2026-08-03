@@ -340,7 +340,7 @@ systemctl --user restart openclaw-gateway.service`}</code>
             </a>
           </div>
         </div>
-        <ScrollArrow nextId="memory" label="Continue to Memory" />
+        <ScrollArrow nextId="cloud" label="Continue to Cloud" />
       </section>
     </>
   )

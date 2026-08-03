@@ -8,9 +8,9 @@ export default function Header() {
     { href: '#deployment', label: 'Deployment' },
     { href: '#simulation', label: 'Simulation' },
     { href: '#try-it', label: 'Try It' },
-    { href: '#skills', label: 'Skills' },
     { href: '#memory', label: 'Memory' },
     { href: '#packages', label: 'Packages' },
+    { href: '#skills', label: 'Skills' },
     { href: '#cloud', label: 'Cloud' },
   ]
 

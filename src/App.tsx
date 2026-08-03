@@ -35,9 +35,9 @@ function App() {
         <Simulation />
         <TryIt />
         <Teleop />
-        <Skills />
         <Memory />
         <Packages />
+        <Skills />
         <Cloud />
         <WorksWith />
         <Footer />

@@ -48,7 +48,7 @@ export default function Packages() {
           ))}
         </div>
       </div>
-      <ScrollArrow nextId="cloud" label="Continue to Cloud" />
+      <ScrollArrow nextId="skills" label="Continue to Skills" />
     </section>
   )
 }
