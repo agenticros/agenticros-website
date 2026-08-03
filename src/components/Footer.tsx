@@ -42,6 +42,9 @@ export default function Footer() {
           <a href="https://skills.agenticros.com/submit" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
             Submit a skill
           </a>
+          <a href="https://cloud.agenticros.com" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
+            Cloud
+          </a>
           <span className="text-text-muted">Apache-2.0</span>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-text-secondary">

@@ -14,6 +14,7 @@ import TryIt from './components/TryIt'
 import Skills from './components/Skills'
 import Memory from './components/Memory'
 import Packages from './components/Packages'
+import Cloud from './components/Cloud'
 import WorksWith from './components/WorksWith'
 import Footer from './components/Footer'
 
@@ -37,6 +38,7 @@ function App() {
         <Skills />
         <Memory />
         <Packages />
+        <Cloud />
         <WorksWith />
         <Footer />
       </main>
