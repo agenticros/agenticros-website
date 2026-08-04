@@ -114,7 +114,7 @@ export default function ChoosePath() {
           ))}
         </div>
       </div>
-      <ScrollArrow nextId="features" label="Continue to Features" />
+      <ScrollArrow nextId="robot-hardware" label="Robot hardware CLI" />
     </section>
   )
 }

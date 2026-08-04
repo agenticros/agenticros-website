@@ -4,6 +4,7 @@ import HeroVideo from './components/HeroVideo'
 import HowItWorks from './components/HowItWorks'
 import QuickStart from './components/QuickStart'
 import ChoosePath from './components/ChoosePath'
+import RobotHardware from './components/RobotHardware'
 import Features from './components/Features'
 import Missions from './components/Missions'
 import Teleop from './components/Teleop'
@@ -28,6 +29,7 @@ function App() {
         <HeroVideo />
         <QuickStart />
         <ChoosePath />
+        <RobotHardware />
         <Features />
         <Missions />
         <AgentTools />

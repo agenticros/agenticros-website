@@ -2,6 +2,7 @@ export default function Header() {
   const navLinks = [
     { href: '#how-it-works', label: 'How it works' },
     { href: '#quick-start', label: 'Quick Start' },
+    { href: '#robot-hardware', label: 'Robot hardware' },
     { href: '#features', label: 'Features' },
     { href: '#missions', label: 'Missions' },
     { href: '#agent-tools', label: 'Agent Tools' },
