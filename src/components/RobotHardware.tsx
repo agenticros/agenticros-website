@@ -173,11 +173,20 @@ agenticros stop motors`}</code>
             recovery-mode preflight. Install{' '}
             <code className={mono}>ros-$ROS_DISTRO-realsense2-camera</code>.
           </p>
+          <p className="mt-2 text-sm text-text-muted">
+            Default launch uses <strong>teleop profiles</strong> (RGB{' '}
+            <code className={mono}>320x180@6</code>, depth{' '}
+            <code className={mono}>424x240@6</code>) for responsive WebRTC —
+            same as the legacy robotics CLI. Use{' '}
+            <code className={mono}>--full</code> for stock high-res{' '}
+            <code className={mono}>rs_launch.py</code> defaults.
+          </p>
           <pre className={codeBlock} style={codeStyle}>
-            <code>{`agenticros start realsense
-agenticros start realsense -p          # enable pointcloud
-agenticros start realsense --pointcloud
-agenticros stop realsense
+            <code>{`agenticros stop realsense              # if an old high-res node is running
+agenticros start realsense             # teleop profile (WebRTC-friendly)
+agenticros start realsense -p          # + pointcloud
+agenticros start realsense --full      # stock high-res defaults
+agenticros start realsense --model=D421
 # logs: /tmp/agenticros-camera.log`}</code>
           </pre>
 
