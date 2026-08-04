@@ -82,7 +82,7 @@ export default function Cloud() {
           ⟩ AgenticROS Cloud
         </h2>
         <p className="mt-4 text-text-secondary">
-          Remote control and fleet management for your AgenticROS robots.{' '}
+          The Control Plane for Physical AI and your AgenticROS robots.{' '}
           <a
             href="https://cloud.agenticros.com"
             className="text-cyan-bright hover:underline"
