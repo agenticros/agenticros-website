@@ -40,20 +40,30 @@ export default function RobotHardware() {
           </p>
 
           <h3 className="mt-10 text-lg font-medium text-text-primary">
-            1. Init + Cloud API token
+            1. Init + Cloud login / register
           </h3>
           <p className="mt-2 text-sm text-text-muted">
             <code className={mono}>init</code> installs workspace deps (required
-            for connect/motors). The token is your{' '}
-            <strong>API key from AgenticROS Cloud</strong> (API docs page after
-            sign-in at cloud.agenticros.com).
+            for connect/motors) and can walk you through Cloud login. Prefer{' '}
+            <code className={mono}>login</code> +{' '}
+            <code className={mono}>register</code> so the CLI claims a shared
+            robot UUID (name, camera, compute) without copying tokens from the
+            portal.
           </p>
           <pre className={codeBlock} style={codeStyle}>
             <code>{`npm install -g agenticros
 agenticros init
-agenticros set --token=<API_TOKEN_FROM_CLOUD>
-agenticros id          # add this UUID to your cloud fleet
+agenticros login       # browser device-code + GitHub → saves API token
+agenticros register    # name, camera, compute → same UUID on robot + Cloud
 agenticros connect     # wss://cloud.agenticros.com`}</code>
+          </pre>
+          <p className="mt-2 text-sm text-text-muted">
+            Pro fallback (manual token / ID from the Cloud API page):
+          </p>
+          <pre className={codeBlock} style={codeStyle}>
+            <code>{`agenticros set --token=<API_TOKEN_FROM_CLOUD>
+agenticros set --id=<robot-uuid>   # optional
+agenticros id`}</code>
           </pre>
 
           <h3 className="mt-10 text-lg font-medium text-text-primary">

@@ -52,7 +52,15 @@ const features = [
         No-code / low-code Blockly flows, VS Code / Cursor extension, Copilot
         Gen-AI helpers, and CLI workflows (
         <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">
-          agenticros connect
+          agenticros login
+        </code>
+        ,{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">
+          register
+        </code>
+        ,{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">
+          connect
         </code>
         , start motors, start camera / RealSense) so agents and humans share one
         remote control plane.
