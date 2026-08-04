@@ -26,11 +26,13 @@ export default function Hero() {
       </p>
       <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
         <img src="/openclaw.png" alt="OpenClaw" className="h-16 w-16 object-contain md:h-20 md:w-20" />
+        <img src="/nemoclaw.png" alt="NemoClaw" className="h-16 w-16 object-contain md:h-20 md:w-20" />
         <img src="/claudecode.png" alt="Claude Code, Claude desktop, and Dispatch" className="h-16 w-16 object-contain md:h-20 md:w-20" />
         <img src="/codex.png" alt="OpenAI Codex CLI" className="h-16 w-16 object-contain md:h-20 md:w-20" />
         <img src="/hermes.png" alt="Hermes Agent" className="h-16 w-16 object-contain md:h-20 md:w-20" />
         <img src="/gemini.png" alt="Google Gemini" className="h-16 w-16 object-contain md:h-20 md:w-20" />
-        <img src="/ros.webp" alt="ROS" className="h-16 w-16 object-contain md:h-20 md:w-20" />
+        <img src="/mcp.png" alt="MCP" className="h-16 w-16 object-contain md:h-20 md:w-20" />
+        <img src="/ollama-white.png" alt="Ollama" className="h-16 w-16 object-contain md:h-20 md:w-20" />
       </div>
       <p className="mt-3 max-w-3xl text-text-muted">
         Use <strong>multiple AI agents</strong> ({' '}
