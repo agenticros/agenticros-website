@@ -109,26 +109,7 @@ export default function Cloud() {
           ))}
         </div>
 
-        <h3 className="mt-10 font-display text-lg font-medium text-text-primary">
-          Get a robot online
-        </h3>
-        <pre
-          className="mt-3 overflow-x-auto rounded-lg bg-bg-elevated p-4 font-mono text-sm text-text-primary"
-          style={{ background: 'var(--surface-inset-highlight)' }}
-        >
-          <code>{`npm install -g robotics
-robotics id
-robotics set --token=<your-api-token>
-robotics connect
-robotics start motors
-robotics start camera`}</code>
-        </pre>
-        <p className="mt-3 text-sm text-text-muted">
-          Add the robot ID in Cloud, then teleop, call APIs, or hand control to
-          your AI agents from anywhere.
-        </p>
-
-        <div className="mt-6">
+        <div className="mt-10">
           <a
             href="https://cloud.agenticros.com"
             className="inline-flex items-center rounded-lg bg-cyan-bright px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-mid"
