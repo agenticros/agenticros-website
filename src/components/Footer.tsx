@@ -87,7 +87,7 @@ export default function Footer() {
           {' & other AI agents'}
         </p>
         <p className="text-center text-sm text-text-muted">
-          AgenticROS is supported by{' '}
+          AgenticROS is sponsored by{' '}
           <a href="https://realsenseai.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">RealSense</a>.
           <img
             src="/realsense-openclaw.png"
