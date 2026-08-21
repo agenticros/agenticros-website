@@ -16,8 +16,9 @@ const features = [
     summary: (
       <>
         Register robots, track presence, and orchestrate multi-robot fleets from
-        one dashboard. Namespace ROS 2 topics per robot and share access across
-        your team when you scale beyond a single machine.
+        one dashboard. Namespace ROS 2 topics per robot. On Teams and
+        Enterprise, create an organization, invite teammates by GitHub username,
+        and share teleop, APIs, and dashboards across the fleet.
       </>
     ),
   },
@@ -101,7 +102,9 @@ export default function Cloud() {
           </a>{' '}
           is a P2P developer &amp; operations platform for ROS 2 — worldwide
           teleop, SDKs, REST APIs, and AI tooling. A simple no-code / low-code
-          path when you need robots online beyond the local lab.
+          path when you need robots online beyond the local lab. Teams and
+          Enterprise share one organization so every member can see and control
+          the same robots.
         </p>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -117,7 +120,7 @@ export default function Cloud() {
           ))}
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 flex flex-wrap items-center gap-4">
           <a
             href="https://cloud.agenticros.com"
             className="inline-flex items-center rounded-lg bg-cyan-bright px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-mid"
@@ -125,6 +128,14 @@ export default function Cloud() {
             rel="noopener noreferrer"
           >
             Open AgenticROS Cloud
+          </a>
+          <a
+            href="https://cloud.agenticros.com/pricing"
+            className="text-sm text-cyan-bright hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Cloud pricing →
           </a>
         </div>
       </div>
