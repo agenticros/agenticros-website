@@ -107,6 +107,19 @@ export default function Cloud() {
           the same robots.
         </p>
 
+        <figure className="mt-8 overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-bg-elevated/40 shadow-2xl shadow-cyan-bright/10">
+          <div className="aspect-video w-full">
+            <iframe
+              className="h-full w-full"
+              src="https://www.youtube.com/embed/ibW2FAhDnj4?rel=0"
+              title="AgenticROS Cloud demo video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </figure>
+
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {features.map(({ title, summary }) => (
             <div
