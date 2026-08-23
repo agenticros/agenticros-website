@@ -46,6 +46,31 @@ export default function Memory() {
           <p className="mt-3 text-text-secondary">
             The default namespace is the robot namespace, so every adapter talking to the same robot sees the same memories across processes, sessions, and restarts. Remember a fact from Claude Desktop and recall it immediately from OpenClaw — no sidecar service, no extra config.
           </p>
+          <p className="mt-3 text-text-secondary">
+            Memory is for <strong>this robot</strong>. To share notes and camera watch across an organization, turn on optional{' '}
+            <a
+              href="https://github.com/agenticros/agenticros/blob/main/docs/hive.md"
+              className="text-cyan-bright hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              fleet hive
+            </a>{' '}
+            with{' '}
+            <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">
+              agenticros hive on
+            </code>
+            , or <strong>Enable fleet hive</strong> on{' '}
+            <a
+              href="https://cloud.agenticros.com"
+              className="text-cyan-bright hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Cloud
+            </a>
+            . Off by default.
+          </p>
 
           <h3 className="mt-8 font-display text-lg font-medium text-text-primary">When it's useful</h3>
           <ul className="mt-3 list-disc space-y-2 pl-6 text-text-secondary">
@@ -122,6 +147,15 @@ export default function Memory() {
               rel="noopener noreferrer"
             >
               mem0 backend
+            </a>
+            <a
+              href="https://github.com/agenticros/agenticros/blob/main/docs/hive.md"
+              className="inline-flex items-center rounded-lg border border-[var(--border-subtle)] px-4 py-2 text-sm font-medium text-text-primary transition hover:bg-bg-elevated"
+              style={{ background: 'var(--surface-card)' }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fleet hive docs
             </a>
           </div>
         </div>

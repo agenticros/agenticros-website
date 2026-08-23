@@ -85,6 +85,13 @@ const memoryTools: Tool[] = [
   { name: 'memory_status', description: 'Health check: enabled, backend, namespace, record count, last write timestamp' },
 ]
 
+const hiveTools: Tool[] = [
+  { name: 'hive_remember', description: 'Share a note with the organization fleet (not this robot\'s local memory)' },
+  { name: 'hive_recall', description: 'Search fleet notes by free-text query' },
+  { name: 'hive_status', description: 'Health check: hive on/off, reachability, recipe summary' },
+  { name: 'hive_set_recipe', description: 'Turn a camera-watch recipe on or off (detect, describe, health) — never actuation' },
+]
+
 function ToolTable({ tools }: { tools: Tool[] }) {
   return (
     <div className="overflow-hidden rounded-lg border border-[var(--border-subtle)]">
@@ -166,6 +173,29 @@ export default function AgentTools() {
           </p>
           <div className="mt-6">
             <ToolTable tools={memoryTools} />
+          </div>
+
+          <h3 className="mt-10 font-display text-lg font-medium text-text-primary">
+            Fleet hive (optional, off by default)
+          </h3>
+          <p className="mt-3 text-text-secondary">
+            Memory is for <strong>this robot</strong>. When{' '}
+            <a
+              href="https://github.com/agenticros/agenticros/blob/main/docs/hive.md"
+              className="text-cyan-bright hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              fleet hive
+            </a>{' '}
+            is enabled —{' '}
+            <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">
+              agenticros hive on
+            </code>{' '}
+            or <strong>Enable fleet hive</strong> on Cloud — adapters also expose tools to share notes and camera watch across the organization. These are not a third memory backend, and they stay hidden until hive is on.
+          </p>
+          <div className="mt-6">
+            <ToolTable tools={hiveTools} />
           </div>
         </div>
         <ScrollArrow nextId="deployment" label="Continue to Deployment" />

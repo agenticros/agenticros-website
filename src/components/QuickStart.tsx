@@ -167,6 +167,7 @@ agenticros up sim-amr --nav2    # AMR + Nav2 for navigate_to
 agenticros up sim-arm           # simulated 6-DOF arm
 agenticros mode <real|sim>      # swap the active config profile
 agenticros robots list|discover|add   # fleet CRUD + live discovery
+agenticros hive on|off|doctor|recipes # optional fleet hive (off by default)
 agenticros config show|set|use  # view or edit ~/.agenticros/config.json
 agenticros status / logs        # running components + log tail
 agenticros skills               # list / search / install / discover / add / remove

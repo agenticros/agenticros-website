@@ -104,7 +104,13 @@ export default function Cloud() {
           teleop, SDKs, REST APIs, and AI tooling. A simple no-code / low-code
           path when you need robots online beyond the local lab. Teams and
           Enterprise share one organization so every member can see and control
-          the same robots.
+          the same robots. Teams can <strong>Enable fleet hive</strong> on the
+          org page to share notes and camera watch across the fleet; self-host
+          with{' '}
+          <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">
+            agenticros hive on
+          </code>
+          .
         </p>
 
         <figure className="mt-8 overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-bg-elevated/40 shadow-2xl shadow-cyan-bright/10">

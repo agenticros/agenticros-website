@@ -11,6 +11,7 @@ const docLinks = [
   { label: 'CLI reference', href: 'https://github.com/agenticros/agenticros/blob/main/docs/cli.md' },
   { label: 'Skills guide', href: 'https://github.com/agenticros/agenticros/blob/main/docs/skills.md' },
   { label: 'Memory', href: 'https://github.com/agenticros/agenticros/blob/main/docs/memory.md' },
+  { label: 'Fleet hive', href: 'https://github.com/agenticros/agenticros/blob/main/docs/hive.md' },
   { label: 'Teleop', href: 'https://github.com/agenticros/agenticros/blob/main/docs/teleop.md' },
   { label: 'Cameras', href: 'https://github.com/agenticros/agenticros/blob/main/docs/cameras.md' },
   { label: 'Zenoh', href: 'https://github.com/agenticros/agenticros/blob/main/docs/zenoh-agenticros.md' },
