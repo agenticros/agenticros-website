@@ -175,6 +175,9 @@ export default function Skills() {
           <p className="mt-3 text-text-secondary">
             <strong>Create</strong> with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">npx agenticros create-skill</code>, <strong>publish</strong> with <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">npx agenticros publish</code>, and <strong>install</strong> from the <a href="https://skills.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">AgenticROS Skills Marketplace</a> using namespaced refs like <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">chrismatthieu/navigate-to</code>.
           </p>
+          <p className="mt-3 text-text-secondary">
+            The marketplace lists AgenticROS robot skills only. Third-party <a href="https://agentskills.io/home" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Agent Skills</a> catalogs live upstream: <a href="https://www.skills.sh/official" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">official maker catalogs</a> and <a href="https://www.jetson-ai-lab.com/tutorials/jetson-agent-skills/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Jetson Agent Skills</a>.
+          </p>
           <div className="mt-4">
             <a
               href="https://skills.agenticros.com"

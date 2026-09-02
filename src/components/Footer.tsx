@@ -53,6 +53,15 @@ export default function Footer() {
           <a href="https://skills.agenticros.com/submit" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
             Submit a skill
           </a>
+          <a href="https://www.skills.sh/official" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
+            Official Agent Skills
+          </a>
+          <a href="https://www.jetson-ai-lab.com/tutorials/jetson-agent-skills/" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
+            Jetson Agent Skills
+          </a>
+          <a href="https://agentskills.io/home" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
+            Agent Skills spec
+          </a>
           <a href="https://cloud.agenticros.com" className="hover:text-text-primary" target="_blank" rel="noopener noreferrer">
             Cloud
           </a>
