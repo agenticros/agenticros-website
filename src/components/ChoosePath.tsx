@@ -6,7 +6,7 @@ const paths = [
     badge: 'Easiest',
     prereq: 'Node.js 20+ only — no hardware required.',
     command: 'agenticros up sim-amr',
-    description: 'Boot a Gazebo AMR or 6-DOF arm with the same topic names as a real robot. Chat with any supported agent against the sim in minutes.',
+    description: 'Boot a Gazebo AMR or 6-DOF arm with the same topic names as a real robot. Chat with any supported agent against the sim in minutes. Plug in a USB RealSense later with --real-camera (Shadow AMR).',
     cta: { label: 'See simulation specs', href: '#simulation' },
   },
   {

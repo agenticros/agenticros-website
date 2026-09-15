@@ -5,16 +5,17 @@ const robots = [
     id: 'AMR',
     name: '2-wheel AMR',
     summary:
-      'Diff-drive autonomous mobile robot with a front-facing depth camera (RGBD), 360° lidar, and IMU. Drops into a 12 × 12 m indoor world with obstacles and a person target for follow-me demos. Add --nav2 for map + AMCL + Nav2 so navigate_to missions work out of the box.',
+      'Diff-drive autonomous mobile robot with a front-facing depth camera (RGBD), 360° lidar, and IMU. Drops into a 12 × 12 m indoor world with obstacles and a person target for follow-me demos. Add --nav2 for map + AMCL + Nav2 so navigate_to missions work out of the box. Add --real-camera (Shadow AMR) to overlay a live USB RealSense on the simulated body.',
     specs: [
       { label: 'Drive', value: 'Differential, 0.36 m wheelbase' },
       { label: 'Front camera', value: 'D435-like RGBD, 640×480 @ 30 Hz, 87° HFOV' },
       { label: 'LIDAR', value: '360 samples @ 12 Hz, 12 m range' },
       { label: 'IMU', value: '100 Hz with mild gaussian noise' },
       { label: 'Nav2', value: 'agenticros up sim-amr --nav2 → map + AMCL + navigate_to_pose' },
+      { label: 'Shadow AMR', value: 'agenticros up sim-amr --real-camera → live USB RealSense RGB-D on the Gazebo AMR in RViz' },
       { label: 'Topics', value: '/cmd_vel, /odom, /scan, /imu/data, /camera/* — same names as a real RealSense robot' },
     ],
-    command: 'agenticros up sim-amr --nav2',
+    command: 'agenticros up sim-amr --nav2\nagenticros up sim-amr --real-camera',
   },
   {
     id: 'ARM',
@@ -46,11 +47,15 @@ export default function Simulation() {
           </h2>
           <p className="mt-4 text-text-secondary">
             AgenticROS ships <strong>Gazebo Harmonic</strong> simulation assets out of the box &mdash; an
-            indoor world, a 2-wheel <strong>AMR</strong> (optional <strong>Nav2</strong> via{' '}
+            indoor world, a 2-wheel <strong>AMR</strong> (optional{' '}
             <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">
               --nav2
-            </code>
-            ), a 6-DOF <strong>arm manipulator</strong>, and a{' '}
+            </code>{' '}
+            for Nav2, or{' '}
+            <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">
+              --real-camera
+            </code>{' '}
+            for a live RealSense overlay), a 6-DOF <strong>arm manipulator</strong>, and a{' '}
             <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm text-coral-bright">
               ros_gz_bridge
             </code>{' '}
@@ -117,6 +122,16 @@ export default function Simulation() {
               <em>"navigate to the door"</em> or <em>"wave the elbow"</em> on a laptop, before you touch a real motor.
             </li>
             <li>
+              <strong>Shadow AMR.</strong> Plug in a USB RealSense and run{' '}
+              <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm">
+                agenticros up sim-amr --real-camera
+              </code>. The live RGB-D cloud is restamped onto the Gazebo AMR so agents can{' '}
+              <em>&quot;what do you see?&quot;</em> and follow-me against the real room while the wheels stay simulated
+              &mdash; same <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm">/camera/*</code> and{' '}
+              <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm">/cmd_vel</code> tools. Works with{' '}
+              <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm">--nav2</code> too.
+            </li>
+            <li>
               <strong>Headless-friendly.</strong> Pass{' '}
               <code className="rounded bg-bg-elevated px-1.5 py-0.5 font-mono text-sm">gui:=false</code> to the launch file
               (or run with no display attached) and the AMR's depth, lidar, IMU, and joint state all keep streaming &mdash;
@@ -131,12 +146,21 @@ export default function Simulation() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="https://github.com/agenticros/agenticros/blob/main/ros2_ws/src/agenticros_sim/README.md"
+              href="https://github.com/agenticros/agenticros/blob/main/docs/simulation.md"
               className="inline-flex items-center rounded-lg bg-cyan-bright px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-mid"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Simulation README
+              Simulation guide
+            </a>
+            <a
+              href="https://github.com/agenticros/agenticros/blob/main/ros2_ws/src/agenticros_sim/README.md"
+              className="inline-flex items-center rounded-lg border border-[var(--border-subtle)] px-4 py-2 text-sm font-medium text-text-primary transition hover:bg-bg-elevated"
+              style={{ background: 'var(--surface-card)' }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ROS 2 sim package
             </a>
             <a
               href="https://github.com/agenticros/agenticros/blob/main/packages/agenticros-cli/README.md"
