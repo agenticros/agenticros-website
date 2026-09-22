@@ -6,8 +6,14 @@ const features = [
     summary: (
       <>
         Drive robots from anywhere over secure peer-to-peer links — live camera,
-        on-screen controls, and joysticks / gamepads. WebRTC with STUN/TURN
-        keeps robots reachable behind NAT without opening inbound ports.
+        on-screen controls, and joysticks / gamepads. With{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">
+          agenticros up real --map
+        </code>{' '}
+        (CLI 0.7.23+), the control page also draws the live occupancy grid, and a
+        click on a free cell sends a Nav2 goal. The joystick cancels that goal.
+        WebRTC with STUN/TURN keeps robots reachable behind NAT without opening
+        inbound ports.
       </>
     ),
   },
