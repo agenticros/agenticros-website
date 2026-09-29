@@ -96,15 +96,11 @@ export default function Footer() {
           <a href="https://modelcontextprotocol.io/docs/getting-started/intro" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">MCP</a>
           {' & other AI agents'}
         </p>
-        <p className="text-center text-sm text-text-muted">
-          AgenticROS is sponsored by{' '}
-          <a href="https://realsenseai.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">RealSense</a>.
-          <img
-            src="/realsense-openclaw.png"
-            alt="RealSense and OpenClaw"
-            className="h-[250px] w-[250px] object-contain"
-          />
-        </p>
+        <img
+          src="/openclawbot.png"
+          alt="OpenClaw bot"
+          className="h-auto w-[250px] object-contain"
+        />
       </div>
       <ScrollArrow nextId="hero" direction="up" label="Back to top" />
     </footer>
