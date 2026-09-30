@@ -18,6 +18,7 @@ const docLinks = [
   { label: 'MCP setup', href: 'https://github.com/agenticros/agenticros/blob/main/docs/mcp-setup.md' },
   { label: 'Codex setup', href: 'https://github.com/agenticros/agenticros/blob/main/docs/codex-setup.md' },
   { label: 'Hermes setup', href: 'https://github.com/agenticros/agenticros/blob/main/docs/hermes-setup.md' },
+  { label: 'Antigravity setup', href: 'https://github.com/agenticros/agenticros/blob/main/docs/agy-setup.md' },
   { label: 'NemoClaw', href: 'https://github.com/agenticros/agenticros/blob/main/docs/nemoclaw.md' },
   { label: 'cmd_vel troubleshooting', href: 'https://github.com/agenticros/agenticros/blob/main/docs/robot-not-receiving-cmd-vel.md' },
 ]
@@ -86,6 +87,8 @@ export default function Footer() {
           <a href="https://developers.openai.com/codex/cli/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Codex CLI</a>
           {' + '}
           <a href="https://github.com/NousResearch/hermes-agent" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Hermes Agent</a>
+          {' + '}
+          <a href="https://antigravity.google/docs/cli/" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Antigravity CLI</a>
           {' + '}
           <a href="https://claude.com/download" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">Claude desktop</a>
           {' / '}
