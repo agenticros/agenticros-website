@@ -12,6 +12,9 @@ const features = [
         </code>{' '}
         (CLI 0.7.23+), the control page also draws the live occupancy grid, and a
         click on a free cell sends a Nav2 goal. The joystick cancels that goal.
+        CLI 0.7.27 adds a map per room: label it, switch which room the robot is
+        in, and delete a map after confirmation. Free keeps 1 map per robot;
+        Nerd 10, Teams 25, Enterprise a higher cap.
         WebRTC with STUN/TURN keeps robots reachable behind NAT without opening
         inbound ports.
       </>
