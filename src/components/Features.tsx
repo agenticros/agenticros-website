@@ -108,6 +108,17 @@ const features = [
     ),
   },
   {
+    title: 'Telepresence',
+    description: (
+      <>
+        From the{' '}
+        <a href="https://cloud.agenticros.com" className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">AgenticROS Cloud</a>{' '}
+        control page, share your camera and mic onto the robot&apos;s Eyes display. People beside the robot see and talk with you. Video off brings the face back.{' '}
+        <a href="#telepresence" className="text-cyan-bright hover:underline">Learn more →</a>
+      </>
+    ),
+  },
+  {
     title: '2D & 3D vision',
     description: 'Works with 2D webcams and 3D RealSense stereo depth cameras for perception, follow-me, and teleop.',
   },

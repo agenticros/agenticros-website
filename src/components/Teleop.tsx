@@ -72,7 +72,7 @@ export default function Teleop() {
           </a>
         </p>
       </div>
-      <ScrollArrow nextId="memory" label="Continue to Memory" />
+      <ScrollArrow nextId="telepresence" label="Continue to Telepresence" />
     </section>
   )
 }

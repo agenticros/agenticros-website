@@ -21,6 +21,21 @@ const features = [
     ),
   },
   {
+    title: 'Telepresence',
+    summary: (
+      <>
+        Video and Mic on the control page put you on the robot&apos;s Eyes
+        display. Your camera covers the animated face, your voice plays on the
+        tablet, and the robot microphone comes back for a two-way call. Turn
+        both off and the eyes return. Start the face with{' '}
+        <code className="rounded bg-bg-elevated px-1 py-0.5 font-mono text-xs text-coral-bright">
+          agenticros up real --eyes
+        </code>{' '}
+        (CLI 0.7.34+).
+      </>
+    ),
+  },
+  {
     title: 'Fleet Management',
     summary: (
       <>

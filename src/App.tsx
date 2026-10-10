@@ -8,6 +8,7 @@ import RobotHardware from './components/RobotHardware'
 import Features from './components/Features'
 import Missions from './components/Missions'
 import Teleop from './components/Teleop'
+import Telepresence from './components/Telepresence'
 import AgentTools from './components/AgentTools'
 import DeploymentModes from './components/DeploymentModes'
 import Simulation from './components/Simulation'
@@ -37,6 +38,7 @@ function App() {
         <Simulation />
         <TryIt />
         <Teleop />
+        <Telepresence />
         <Memory />
         <Packages />
         <Skills />
