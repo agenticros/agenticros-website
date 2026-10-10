@@ -26,17 +26,30 @@ export default function Telepresence() {
           face. Turn it off and the eyes are already blinking underneath.
           Voice-only leaves the eyes up and shows &quot;On a call.&quot;
         </p>
-        <figure className="mx-auto mt-8 w-fit max-w-full overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-bg-elevated/40 p-3 shadow-2xl shadow-cyan-bright/10">
-          <img
-            src="/telepresence.jpeg"
-            alt="A robot tablet showing a live telepresence call, with the operator's face covering the Eyes display"
-            className="mx-auto h-auto max-h-[36rem] w-auto max-w-full rounded object-contain"
-            loading="lazy"
-          />
-          <figcaption className="mt-3 text-center text-sm text-text-muted">
-            Operator video on the robot&apos;s Eyes display.
-          </figcaption>
-        </figure>
+        <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row md:items-center">
+          <figure className="w-full max-w-md overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-bg-elevated/40 p-3 shadow-2xl shadow-cyan-bright/10">
+            <img
+              src="/telepresence-arc.png"
+              alt="AgenticROS Cloud control page during a telepresence call, with Video and Mic on and the operator's camera in the corner"
+              className="h-auto w-full rounded object-contain"
+              loading="lazy"
+            />
+            <figcaption className="mt-3 text-center text-sm text-text-muted">
+              Video and Mic on the control page.
+            </figcaption>
+          </figure>
+          <figure className="w-fit max-w-full overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-bg-elevated/40 p-3 shadow-2xl shadow-cyan-bright/10">
+            <img
+              src="/telepresence.jpeg"
+              alt="A robot tablet showing a live telepresence call, with the operator's face covering the Eyes display"
+              className="mx-auto h-auto max-h-[32rem] w-auto max-w-full rounded object-contain"
+              loading="lazy"
+            />
+            <figcaption className="mt-3 text-center text-sm text-text-muted">
+              Operator video on the robot&apos;s Eyes display.
+            </figcaption>
+          </figure>
+        </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           <div
             className="rounded-xl border border-[var(--border-subtle)] p-5"
