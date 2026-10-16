@@ -24,7 +24,7 @@ Add your project assets to `public/`:
 
 - `codex.png` — OpenAI Codex CLI logo (hero)
 - `hermes.png` — Hermes Agent logo (hero)
-- `openclaw.png`, `claudecode.png`, `gemini.png`, `ros.webp` — other hero logos
+- `openclaw.png`, `claudecode.png`, `gemini.png`, `grok.webp`, `ros.webp` — other hero logos
 
 ## Repo links
 
