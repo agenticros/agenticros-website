@@ -1,6 +1,11 @@
 import ScrollArrow from './ScrollArrow'
 
-const adapters = [
+const adapters: {
+  agent: string
+  setup: string
+  doc: { label: string; href: string }
+  video?: { label: string; href: string }
+}[] = [
   {
     agent: 'OpenClaw',
     setup: 'agenticros init installs the plugin; chat via WhatsApp, Telegram, Discord, Slack, …',
@@ -71,6 +76,10 @@ const adapters = [
     doc: {
       label: 'Omarchy host guide',
       href: 'https://github.com/agenticros/agenticros/blob/main/docs/omarchy.md',
+    },
+    video: {
+      label: 'Demo video',
+      href: 'https://www.youtube.com/watch?v=l3WLxcOQhYI',
     },
   },
 ]
@@ -210,7 +219,7 @@ agenticros down                 # stop everything we started`}</code>
                   </tr>
                 </thead>
                 <tbody>
-                  {adapters.map(({ agent, setup, doc }) => (
+                  {adapters.map(({ agent, setup, doc, video }) => (
                     <tr key={agent} className="border-b border-[var(--border-subtle)] last:border-0">
                       <td className="px-4 py-3 font-medium text-text-primary">{agent}</td>
                       <td className="px-4 py-3 text-text-secondary">{setup}</td>
@@ -218,6 +227,14 @@ agenticros down                 # stop everything we started`}</code>
                         <a href={doc.href} className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">
                           {doc.label}
                         </a>
+                        {video && (
+                          <>
+                            <br />
+                            <a href={video.href} className="text-cyan-bright hover:underline" target="_blank" rel="noopener noreferrer">
+                              {video.label}
+                            </a>
+                          </>
+                        )}
                       </td>
                     </tr>
                   ))}
