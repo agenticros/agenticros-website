@@ -65,6 +65,14 @@ const adapters = [
       href: 'https://github.com/agenticros/agenticros/blob/main/docs/local-vlm.md',
     },
   },
+  {
+    agent: 'Grok and Claude on Omarchy',
+    setup: 'ROS 2 Jazzy stays in Docker with rosbridge on ws://localhost:9090. Grok, Claude Code, and any other MCP client run natively on the host.',
+    doc: {
+      label: 'Omarchy host guide',
+      href: 'https://github.com/agenticros/agenticros/blob/main/docs/omarchy.md',
+    },
+  },
 ]
 
 export default function QuickStart() {
